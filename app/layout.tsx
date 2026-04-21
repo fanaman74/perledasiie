@@ -1,28 +1,31 @@
 import type { Metadata } from 'next';
-import { Chango, Jost, Cormorant_Garamond } from 'next/font/google';
+import { Cinzel, Jost } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { OrderProvider } from '@/components/OrderProvider';
 import { LanguageProvider } from '@/lib/i18n/LanguageContext';
 
-const chango = Chango({ weight: '400', subsets: ['latin'], variable: '--font-chango', display: 'swap' });
-const jost = Jost({ subsets: ['latin'], variable: '--font-jost', display: 'swap' });
-const cormorant = Cormorant_Garamond({
-  weight: ['300', '400', '600'],
-  style: ['normal', 'italic'],
+const cinzel = Cinzel({
+  weight: ['400', '600', '700'],
   subsets: ['latin'],
-  variable: '--font-cormorant',
+  variable: '--font-cinzel',
+  display: 'swap',
+});
+
+const jost = Jost({
+  subsets: ['latin'],
+  variable: '--font-jost',
   display: 'swap',
 });
 
 export const metadata: Metadata = {
-  title: 'Lotus — Restaurant Vietnamien & Thaïlandais | Laeken, Bruxelles',
-  description: 'Traiteur-Restaurant Lotus — La cuisine Vietnamienne & Thaïlandaise de Laeken, Bruxelles.',
+  title: "Perle d'Asie — Spécialités Cuisines Asiatiques | Jette, Bruxelles",
+  description: "Restaurant Perle d'Asie — Spécialités Cuisines Asiatiques depuis 1997. Avenue de l'Exposition 266, 1090 Jette, Bruxelles.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr" suppressHydrationWarning className={`${chango.variable} ${jost.variable} ${cormorant.variable}`}>
+    <html lang="fr" suppressHydrationWarning className={`${cinzel.variable} ${jost.variable}`}>
       <body className="font-body bg-bg text-text">
         <LanguageProvider>
           <ThemeProvider>

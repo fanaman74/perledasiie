@@ -1,16 +1,16 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-bg: #0f0e0c;
-  --color-bg-alt: #1a1814;
-  --color-surface: #231f1a;
-  --color-text: #f0ebe0;
-  --color-text-muted: #9a9080;
-  --color-accent: #6db840;
-  --color-accent-alt: #a8cc6a;
+  --color-bg: #0d0f0e;
+  --color-bg-alt: #141a16;
+  --color-surface: #1e2720;
+  --color-text: #e8f0e9;
+  --color-text-muted: #7a9480;
+  --color-accent: #4db87a;
+  --color-accent-alt: #7dd4a0;
   --color-border: rgba(255, 255, 255, 0.08);
 
-  --font-display: var(--font-chango, 'Chango'), var(--font-cormorant, 'Cormorant Garamond'), Georgia, serif;
+  --font-display: var(--font-cinzel, 'Cinzel'), Georgia, serif;
   --font-body: var(--font-jost, 'Jost'), 'DM Sans', sans-serif;
 
   --spacing-nav: 72px;
@@ -57,13 +57,13 @@ body {
 
 /* Light mode overrides */
 :root.light {
-  --color-bg: #faf8f5;
-  --color-bg-alt: #f0ece6;
-  --color-surface: #e8e2da;
-  --color-text: #1a1814;
-  --color-text-muted: #6b6358;
-  --color-accent: #3d7022;
-  --color-accent-alt: #5a9e38;
+  --color-bg: #f5f8f5;
+  --color-bg-alt: #eaf0eb;
+  --color-surface: #dde8de;
+  --color-text: #141a16;
+  --color-text-muted: #5a7060;
+  --color-accent: #2d7a52;
+  --color-accent-alt: #4aaa72;
   --color-border: rgba(0, 0, 0, 0.08);
 }
 
