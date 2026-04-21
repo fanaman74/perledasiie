@@ -1,4 +1,28 @@
+# dependencies
 node_modules/
+.pnp/
+.pnp.js
+
+# next.js
 .next/
-.env.local
+out/
 dist/
+build/
+
+# env files
+.env
+.env.local
+.env*.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# legacy
+src/
+
+# misc
+.DS_Store
+*.log
+npm-debug.log*
+coverage/
+.codesight/

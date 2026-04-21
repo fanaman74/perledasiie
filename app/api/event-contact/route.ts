@@ -65,7 +65,8 @@ export async function POST(req: NextRequest) {
 
     // 2. Send emails via Resend (gracefully skip if key not set)
     const resendKey = process.env.RESEND_API_KEY;
-    const restaurantEmail = process.env.RESTAURANT_EMAIL || 'traiteurlotuslaekenvi@gmail.com';
+    const restaurantEmail = process.env.RESTAURANT_EMAIL;
+    if (!restaurantEmail) throw new Error('RESTAURANT_EMAIL env var is required');
     const fromEmail = process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev';
 
     if (resendKey) {

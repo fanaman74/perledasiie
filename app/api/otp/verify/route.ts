@@ -60,7 +60,8 @@ export async function POST(req: NextRequest) {
     // Send confirmation emails (non-blocking)
     const resendKey = process.env.RESEND_API_KEY;
     const fromEmail = process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev';
-    const restaurantEmail = process.env.RESTAURANT_EMAIL || 'traiteurlotuslaekenvi@gmail.com';
+    const restaurantEmail = process.env.RESTAURANT_EMAIL;
+    if (!restaurantEmail) throw new Error('RESTAURANT_EMAIL env var is required');
 
     if (resendKey) {
       const resend = new Resend(resendKey);

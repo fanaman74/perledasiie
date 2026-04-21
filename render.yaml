@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: lotus-website
+    name: perledasie-website
     runtime: node
     buildCommand: npm install && npm run build
     startCommand: npm run start
@@ -13,7 +13,7 @@ services:
         sync: false
       - key: SUPABASE_SERVICE_ROLE_KEY
         sync: false
-      - key: LOTUS_ADMIN_PASSWORD
+      - key: ADMIN_PASSWORD
         sync: false
       - key: RESEND_API_KEY
         sync: false
