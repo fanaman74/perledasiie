@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { useOrder } from './OrderProvider';
+import MenuSetCard from './MenuSetCard';
 
 type MenuItem = {
   id: string;
@@ -11,16 +12,22 @@ type MenuItem = {
   priceTakeaway: number | null;
 };
 
-type Category = {
+type SetMenuItem = {
   id: string;
   name: string;
-  items: MenuItem[];
+  description: string;
+  price: number;
+  min_people: number;
+  includes: string[];
+  type: 'set' | 'fondue';
 };
 
 type Section = {
   id: string;
   name: string;
-  categories: Category[];
+  kind: 'table' | 'cards';
+  items?: MenuItem[];
+  setItems?: SetMenuItem[];
 };
 
 type MenuDict = {
@@ -39,17 +46,6 @@ export default function Menu({ sections, dict }: MenuProps) {
   const { addItem } = useOrder();
   const [activeSectionId, setActiveSectionId] = useState(sections[0]?.id || '');
   const activeSection = sections.find(s => s.id === activeSectionId);
-  const [activeCategoryId, setActiveCategoryId] = useState(activeSection?.categories[0]?.id || '');
-
-  function switchSection(sectionId: string) {
-    setActiveSectionId(sectionId);
-    const section = sections.find(s => s.id === sectionId);
-    if (section?.categories[0]) {
-      setActiveCategoryId(section.categories[0].id);
-    }
-  }
-
-  const activeCategory = activeSection?.categories.find(c => c.id === activeCategoryId);
 
   function handleAdd(item: MenuItem) {
     if (!item.priceTakeaway) return;
@@ -64,52 +60,39 @@ export default function Menu({ sections, dict }: MenuProps) {
   return (
     <section id="menu" className="py-24 px-6">
       <div className="max-w-[1200px] mx-auto">
-        <h2 className="font-display italic text-3xl md:text-4xl text-center mb-10">
+        <h2 className="font-display text-3xl md:text-4xl text-center mb-10">
           {dict.title}
         </h2>
 
-        {/* Section toggle (Thai / Viet) */}
-        {sections.length > 1 && (
-          <div className="flex justify-center gap-4 mb-8">
-            {sections.map(section => (
-              <button
-                key={section.id}
-                onClick={() => switchSection(section.id)}
-                className={`px-6 py-2 text-sm uppercase tracking-wider border transition-colors ${
-                  activeSectionId === section.id
-                    ? 'border-accent bg-accent text-bg font-medium'
-                    : 'border-border text-text-muted hover:text-text hover:border-text'
-                }`}
-              >
-                {section.name}
-              </button>
+        {/* Section tabs */}
+        <div className="flex flex-wrap justify-center gap-3 mb-12">
+          {sections.map(section => (
+            <button
+              key={section.id}
+              onClick={() => setActiveSectionId(section.id)}
+              className={`px-6 py-2 text-sm uppercase tracking-wider border transition-colors ${
+                activeSectionId === section.id
+                  ? 'border-accent bg-accent text-bg font-medium'
+                  : 'border-border text-text-muted hover:text-text hover:border-text'
+              }`}
+            >
+              {section.name}
+            </button>
+          ))}
+        </div>
+
+        {/* Card grid for Menus and Fondues */}
+        {activeSection?.kind === 'cards' && activeSection.setItems && (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-[900px] mx-auto">
+            {activeSection.setItems.map(item => (
+              <MenuSetCard key={item.id} item={item} />
             ))}
           </div>
         )}
 
-        {/* Category tabs */}
-        {activeSection && activeSection.categories.length > 1 && (
-          <div className="flex flex-wrap justify-center gap-2 mb-10">
-            {activeSection.categories.map(cat => (
-              <button
-                key={cat.id}
-                onClick={() => setActiveCategoryId(cat.id)}
-                className={`px-4 py-1.5 text-xs uppercase tracking-wider rounded-full transition-colors ${
-                  activeCategoryId === cat.id
-                    ? 'bg-accent/15 text-accent font-medium'
-                    : 'text-text-muted hover:text-text'
-                }`}
-              >
-                {cat.name}
-              </button>
-            ))}
-          </div>
-        )}
-
-        {/* Items table */}
-        {activeCategory && activeCategory.items.length > 0 && (
+        {/* Table rows for Entrées and Plats */}
+        {activeSection?.kind === 'table' && activeSection.items && (
           <div className="max-w-[800px] mx-auto">
-            {/* Column headers */}
             <div className="flex items-center text-xs uppercase tracking-wider text-text-muted border-b border-border pb-2 mb-4">
               <span className="w-10">#</span>
               <span className="flex-1">Plat</span>
@@ -118,7 +101,7 @@ export default function Menu({ sections, dict }: MenuProps) {
               <span className="w-10" />
             </div>
 
-            {activeCategory.items.map(item => (
+            {activeSection.items.map(item => (
               <div key={item.id} className="flex items-center py-3 border-b border-border/50 group">
                 <span className="w-10 text-text-muted text-sm">{item.num}</span>
                 <div className="flex-1 min-w-0 pr-4">
@@ -139,19 +122,18 @@ export default function Menu({ sections, dict }: MenuProps) {
                       aria-label={`Add ${item.name}`}
                     >
                       <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2}>
-                          <path strokeLinecap="round" strokeLinejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 11H4L5 9z" />
-                        </svg>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 11H4L5 9z" />
+                      </svg>
                     </button>
                   )}
                 </span>
               </div>
             ))}
-          </div>
-        )}
 
-        {/* Empty state */}
-        {activeCategory && activeCategory.items.length === 0 && (
-          <p className="text-center text-text-muted py-12">--</p>
+            {activeSection.items.length === 0 && (
+              <p className="text-text-muted text-center py-12 text-sm">Carte en cours de mise à jour.</p>
+            )}
+          </div>
         )}
       </div>
     </section>
