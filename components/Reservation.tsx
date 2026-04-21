@@ -33,8 +33,8 @@ interface ReservationProps {
 }
 
 const timeSlots = [
-  '11:30', '12:00', '12:30', '13:00', '13:30', '14:00',
-  '17:30', '18:00', '18:30', '19:00', '19:30', '20:00', '20:30', '21:00',
+  '10:30', '11:00', '11:30', '12:00', '12:30', '13:00', '13:30',
+  '17:15', '17:30', '18:00', '18:30', '19:00', '19:30', '20:00', '20:30', '21:00', '21:30', '22:00',
 ];
 
 const monthNamesByLocale: Record<string, string[]> = {
@@ -104,7 +104,7 @@ export default function Reservation({ dict, locale }: ReservationProps) {
   function selectDay(day: number) {
     const d = new Date(calYear, calMonth, day);
     if (d < today) return;
-    if (d.getDay() === 3) return; // Wednesday closed
+    if (d.getDay() === 2) return; // Tuesday closed
     setSelectedDate(d);
   }
 
@@ -263,8 +263,8 @@ export default function Reservation({ dict, locale }: ReservationProps) {
                     const day = i + 1;
                     const date = new Date(calYear, calMonth, day);
                     const isPast = date < today;
-                    const isWednesday = date.getDay() === 3;
-                    const isDisabled = isPast || isWednesday;
+                    const isTuesday = date.getDay() === 2;
+                    const isDisabled = isPast || isTuesday;
                     const isSelected = selectedDate && selectedDate.getTime() === date.getTime();
                     return (
                       <button

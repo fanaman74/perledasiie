@@ -6,6 +6,7 @@ type FooterDict = {
     events: string;
     info: string;
     contact: string;
+    allergenes: string;
   };
   findUs: {
     address: string;
@@ -23,6 +24,7 @@ const navLinks = [
   { key: 'events' as const, href: '#evenements' },
   { key: 'info' as const, href: '#informations' },
   { key: 'contact' as const, href: '#contact' },
+  { key: 'allergenes' as const, href: '/allergenes' },
 ];
 
 export default function Footer({ dict }: { dict: FooterDict }) {
@@ -30,8 +32,8 @@ export default function Footer({ dict }: { dict: FooterDict }) {
     <footer className="border-t border-border py-16 px-6">
       <div className="max-w-[1200px] mx-auto flex flex-col items-center gap-8 text-center">
         {/* Wordmark */}
-        <a href="#accueil" className="font-display uppercase tracking-[0.2em] text-2xl text-text no-underline">
-          LOTUS
+        <a href="#accueil" className="font-display uppercase tracking-[0.12em] text-xl text-text no-underline">
+          PERLE D&apos;ASIE
         </a>
 
         {/* Nav links */}
