@@ -1,0 +1,571 @@
+{
+  "nav": {
+    "home": "Home",
+    "menu": "Menu",
+    "events": "Events",
+    "info": "Info",
+    "contact": "Contact",
+    "photos": "Photos"
+  },
+  "hero": {
+    "superscript": "Restaurant · Caterer · Laeken",
+    "title": "Vietnamese & Thai cuisine in Laeken.",
+    "subtitle": "A warm neighbourhood table — where tradition meets the simple pleasure of a well-crafted dish.",
+    "cta": "View the menu",
+    "scroll": "Scroll"
+  },
+  "about": {
+    "title": "Our Table",
+    "body": "Located in the heart of the Laeken neighbourhood in Brussels, Lotus welcomes you in a warm and friendly setting. A beloved local canteen for Vietnamese and Thai cuisine, our dishes are meant to be shared among friends, family, and colleagues. Our mission is simple: serve delicious, affordable food you'll want to order week after week."
+  },
+  "featured": {
+    "title": "Our Specialities"
+  },
+  "menu": {
+    "title": "Our Menu",
+    "addButton": "+ Add",
+    "sections": {
+      "thai": "Thai Specialities",
+      "viet": "Vietnamese Specialities"
+    },
+    "subcategories": {
+      "thai_potages": "Soups",
+      "thai_entrees": "Starters",
+      "thai_volailles": "Poultry",
+      "thai_viandes": "Pork & Beef",
+      "thai_poissons": "Fish & Seafood",
+      "thai_riz": "Rice",
+      "viet_potages": "Soups",
+      "viet_entrees": "Starters",
+      "viet_dimsum": "Dim Sum (steamed)",
+      "viet_volailles": "Poultry",
+      "viet_viandes": "Pork & Beef",
+      "viet_poissons": "Fish & Seafood",
+      "viet_riz": "Rice",
+      "viet_nouilles": "Noodles",
+      "viet_vegetariens": "Vegetarian"
+    },
+    "priceRestaurant": "Dine-in",
+    "priceTraiteur": "T/away",
+    "dish": {
+      "th01": {
+        "name": "Tom Yam Kai",
+        "desc": "Chicken with lemongrass"
+      },
+      "th02": {
+        "name": "Tom Ka Kai",
+        "desc": "Chicken, coconut milk"
+      },
+      "th03": {
+        "name": "Tom Yam Khung",
+        "desc": "Prawns with lemongrass"
+      },
+      "th04": {
+        "name": "Chicken Satay",
+        "desc": "Chicken skewers"
+      },
+      "th4a": {
+        "name": "Thai Croquettes",
+        "desc": "Crispy croquettes with Thai spices"
+      },
+      "th05": {
+        "name": "Pai Kai Tod",
+        "desc": "Stuffed chicken wings"
+      },
+      "th06": {
+        "name": "Prawns with Coriander",
+        "desc": "Prawns sauteed with fresh coriander"
+      },
+      "th07": {
+        "name": "Prawn Ravioli",
+        "desc": "Steamed ravioli with prawns and meat"
+      },
+      "th08": {
+        "name": "Chicken Salad",
+        "desc": "With fresh herbs"
+      },
+      "th09": {
+        "name": "Beef Salad",
+        "desc": "Lightly grilled with lemon"
+      },
+      "th10": {
+        "name": "Prawn Salad",
+        "desc": "Fresh prawns, crunchy salad, Thai vinaigrette"
+      },
+      "th11": {
+        "name": "Homok",
+        "desc": "Chicken souffle with coconut and curry"
+      },
+      "th12": {
+        "name": "Grilled Chicken",
+        "desc": "With lemongrass or Tom Yam sauce"
+      },
+      "th13": {
+        "name": "Chicken Stir-fried with Basil",
+        "desc": "With vegetables"
+      },
+      "th14": {
+        "name": "Red Curry Chicken",
+        "desc": "Coconut casserole"
+      },
+      "th15": {
+        "name": "Duck with Red Curry",
+        "desc": "Casserole"
+      },
+      "th16": {
+        "name": "Lacquered Duck",
+        "desc": "With pancakes and leeks"
+      },
+      "th17": {
+        "name": "Caramelised Pork",
+        "desc": "Spicy"
+      },
+      "th18": {
+        "name": "Spicy Beef with Basil",
+        "desc": "Beef stir-fried with Thai basil and chilli"
+      },
+      "th19": {
+        "name": "Beef with Red Curry",
+        "desc": "Coconut milk and peanuts"
+      },
+      "th20": {
+        "name": "Beef with Green Curry",
+        "desc": "Thai aubergines"
+      },
+      "th21": {
+        "name": "Grilled Prawns",
+        "desc": "With coconut milk"
+      },
+      "th22": {
+        "name": "Prawn Teppan",
+        "desc": "Vegetables, spicy"
+      },
+      "th23": {
+        "name": "Crispy Fish Bites",
+        "desc": "Coriander sauce or sweet and sour"
+      },
+      "th24": {
+        "name": "Seafood Teppan",
+        "desc": "Scallops, prawns, squid, fish"
+      },
+      "th25": {
+        "name": "Seafood Curry Casserole",
+        "desc": "Scallops, prawns, squid, fish"
+      },
+      "th26": {
+        "name": "Grilled King Prawns",
+        "desc": "With lemongrass"
+      },
+      "th27": {
+        "name": "Salmon Homok",
+        "desc": "In banana leaf"
+      },
+      "th29": {
+        "name": "Vegetable Fried Rice",
+        "desc": "Vegetarian"
+      },
+      "th30": {
+        "name": "Chicken Fried Rice",
+        "desc": "Fragrant rice wok-fried with chicken"
+      },
+      "th31": {
+        "name": "Special Mix Fried Rice",
+        "desc": "Chicken, prawns, pork and vegetables"
+      },
+      "th32": {
+        "name": "Prawn Fried Rice",
+        "desc": "Fragrant rice wok-fried with prawns"
+      },
+      "th33": {
+        "name": "Rice Vermicelli with Spring Rolls",
+        "desc": "Vermicelli with crispy spring rolls"
+      },
+      "th34": {
+        "name": "Beef Rice Vermicelli",
+        "desc": "Stir-fried with lemongrass"
+      },
+      "vn01": {
+        "name": "Saigon Soup",
+        "desc": "Prawns, meat, vermicelli"
+      },
+      "vn02": {
+        "name": "Oriental Pepper Soup",
+        "desc": "Spiced broth with oriental spices"
+      },
+      "vn2a": {
+        "name": "Fresh Vegetable Soup",
+        "desc": "Seasonal vegetables in fragrant broth"
+      },
+      "vn03": {
+        "name": "Wan Tan Ravioli Soup",
+        "desc": "Langoustines and meat"
+      },
+      "vn04": {
+        "name": "Asparagus and Crab Soup",
+        "desc": "Crab meat"
+      },
+      "vn05": {
+        "name": "Nems",
+        "desc": "Hot rolls with langoustines and meat"
+      },
+      "vn06": {
+        "name": "Spring Rolls",
+        "desc": "Prawns and meat, cold"
+      },
+      "vn07": {
+        "name": "Chicken Loempia",
+        "desc": "Sweet and sour sauce"
+      },
+      "vn08": {
+        "name": "Crispy Prawn Fan",
+        "desc": "Breaded prawns in fan shape, golden and crispy"
+      },
+      "vn09": {
+        "name": "House Platter",
+        "desc": "Min. 2 guests — skewers, spring rolls, ravioli, fritters, salad"
+      },
+      "vn10": {
+        "name": "Pork or Chicken Dumplings",
+        "desc": "Steamed stuffed ravioli"
+      },
+      "vn11": {
+        "name": "Langoustine Dumplings",
+        "desc": "Or scallops"
+      },
+      "vn12": {
+        "name": "Dim Sum Assortment",
+        "desc": "Varied selection of steamed dumplings"
+      },
+      "vn13": {
+        "name": "Chicken with Fresh Pineapple",
+        "desc": "Chicken stir-fried with fresh pineapple pieces"
+      },
+      "vn14": {
+        "name": "Spicy Imperial Chicken",
+        "desc": "Crispy chicken with spicy imperial sauce"
+      },
+      "vn15": {
+        "name": "Chicken with 3 Mushrooms",
+        "desc": "Shiitake, oyster mushrooms and black mushrooms"
+      },
+      "vn16": {
+        "name": "Duck a l'Orange",
+        "desc": "Roasted duck with homemade orange sauce"
+      },
+      "vn17": {
+        "name": "Melt-in-the-mouth Duck",
+        "desc": "House speciality — min. 2 guests"
+      },
+      "vn18": {
+        "name": "Sweet and Sour Pork",
+        "desc": "Breaded pork with sweet and sour sauce and vegetables"
+      },
+      "vn19": {
+        "name": "Honey Glazed Pork",
+        "desc": "Pork caramelised with honey and sesame"
+      },
+      "vn20": {
+        "name": "Chef's Grilled Beef",
+        "desc": "With vermicelli"
+      },
+      "vn21": {
+        "name": "Spicy Satay Beef",
+        "desc": "Beef stir-fried with spicy satay peanut sauce"
+      },
+      "vn22": {
+        "name": "The Eight Delights",
+        "desc": "Pork, chicken, prawns, squid, vegetables"
+      },
+      "vn23": {
+        "name": "Crispy Squid",
+        "desc": "Fried squid, golden and crispy"
+      },
+      "vn24": {
+        "name": "Prawn Fritters",
+        "desc": "Sweet and sour"
+      },
+      "vn25": {
+        "name": "Fisherman's Pot",
+        "desc": "Scallops, prawns, squid, fish"
+      },
+      "vn26": {
+        "name": "Fresh Salmon",
+        "desc": "With ginger and lime"
+      },
+      "vn27": {
+        "name": "Garlic Frog Legs",
+        "desc": "Sauteed in garlic butter with parsley"
+      },
+      "vn28": {
+        "name": "Frog Legs",
+        "desc": "With lemongrass"
+      },
+      "vn29": {
+        "name": "Vegetable Fried Rice",
+        "desc": "Vegetarian"
+      },
+      "vn30": {
+        "name": "Chicken Fried Rice",
+        "desc": "Fragrant rice wok-fried with chicken"
+      },
+      "vn31": {
+        "name": "Special Mix Fried Rice",
+        "desc": "Chicken, prawns, pork and vegetables"
+      },
+      "vn32": {
+        "name": "Prawn Fried Rice",
+        "desc": "Fragrant rice wok-fried with prawns"
+      },
+      "vn33": {
+        "name": "Rice Vermicelli with Spring Rolls",
+        "desc": "Vermicelli with crispy spring rolls"
+      },
+      "vn34": {
+        "name": "Beef Rice Vermicelli",
+        "desc": "Stir-fried with lemongrass"
+      },
+      "vn35": {
+        "name": "Vegetable Stir-fried Noodles",
+        "desc": "Vegetarian"
+      },
+      "vn36": {
+        "name": "Chicken Stir-fried Noodles",
+        "desc": "Wheat noodles wok-fried with chicken"
+      },
+      "vn37": {
+        "name": "Glazed Pork Stir-fried Noodles",
+        "desc": "Noodles stir-fried with caramelised glazed pork"
+      },
+      "vn38": {
+        "name": "Chef's Noodles",
+        "desc": "Chef's signature recipe with varied garnish"
+      },
+      "vn39": {
+        "name": "Prawn Stir-fried Noodles",
+        "desc": "Wheat noodles wok-fried with prawns"
+      },
+      "vn40": {
+        "name": "Large Beef Pho Soup",
+        "desc": "Tonkinese style"
+      },
+      "vn41": {
+        "name": "Large Saigon Soup",
+        "desc": "Fragrant broth, prawns, meat, noodles"
+      },
+      "vn42": {
+        "name": "Fresh Stir-fried Vegetables",
+        "desc": "Seasonal vegetables wok-fried"
+      },
+      "vn43": {
+        "name": "The Monk's Plate",
+        "desc": "Assortment of vegetables and tofu"
+      },
+      "vn44": {
+        "name": "Pan-fried Tofu",
+        "desc": "With lemongrass"
+      },
+      "vn45": {
+        "name": "Vegetable Curry Casserole",
+        "desc": "Vegetables simmered in curry and coconut milk"
+      }
+    },
+    "categories": {
+      "starters": "Starters",
+      "mains": "Mains",
+      "desserts": "Desserts",
+      "drinks": "Drinks"
+    },
+    "items": {
+      "spring_rolls": {
+        "name": "Spring Rolls",
+        "desc": "Fresh vegetables, vermicelli, peanut sauce"
+      },
+      "nem": {
+        "name": "Vietnamese Nem (4 pcs)",
+        "desc": "Pork, shrimp, black mushrooms, nuoc-mam sauce"
+      },
+      "papaya_salad": {
+        "name": "Green Papaya Salad",
+        "desc": "Shredded papaya, dried shrimp, peanuts"
+      },
+      "tom_yum": {
+        "name": "Tom Yum Soup",
+        "desc": "Spicy shrimp broth with lemongrass and galangal"
+      },
+      "pho_bo": {
+        "name": "Pho Bo",
+        "desc": "Homemade beef broth, rice noodles, fresh herbs"
+      },
+      "pad_thai": {
+        "name": "Pad Thai",
+        "desc": "Stir-fried noodles with shrimp, peanuts, lime"
+      },
+      "bo_bun": {
+        "name": "Bo Bun",
+        "desc": "Rice vermicelli, grilled beef, spring rolls, raw vegetables"
+      },
+      "green_curry": {
+        "name": "Thai Green Curry",
+        "desc": "Chicken, coconut milk, aubergine, Thai basil"
+      },
+      "canard_laque": {
+        "name": "Lacquered Duck",
+        "desc": "Roasted duck, hoisin sauce, mandarin pancakes"
+      },
+      "riz_saute": {
+        "name": "Vegetable Fried Rice",
+        "desc": "Fragrant rice, seasonal vegetables, soy sauce"
+      },
+      "creme_coco": {
+        "name": "Coconut Cream",
+        "desc": "Tapioca pearls, coconut milk, fresh mango"
+      },
+      "beignets_banane": {
+        "name": "Banana Fritters",
+        "desc": "Fried banana, honey, sesame"
+      },
+      "the_jasmin": {
+        "name": "Jasmine Tea",
+        "desc": "Green tea infused with jasmine blossoms"
+      },
+      "biere_saigon": {
+        "name": "Saigon Beer",
+        "desc": "Vietnamese lager 33cl"
+      },
+      "jus_litchi": {
+        "name": "Lychee Juice",
+        "desc": "Freshly pressed lychee juice"
+      }
+    }
+  },
+  "events": {
+    "title": "Events",
+    "body": "Book Lotus for your next private event, birthday, or corporate dinner. We also offer a home catering service for all your special occasions.",
+    "cta": "Get in touch"
+  },
+  "findUs": {
+    "title": "Find Us",
+    "address": "17 avenue de Busleyden, 1020 Laeken, Belgium",
+    "phone": "+32 2 366 47 40",
+    "hoursTitle": "Opening Hours",
+    "hours": {
+      "monday": {
+        "day": "Monday",
+        "time": "12pm – 2:30pm  /  6pm – 9:30pm"
+      },
+      "tuesday": {
+        "day": "Tuesday",
+        "time": "12pm – 2:30pm  /  6pm – 9:30pm"
+      },
+      "wednesday": {
+        "day": "Wednesday",
+        "time": "Closed"
+      },
+      "thursday": {
+        "day": "Thursday",
+        "time": "12pm – 2:30pm  /  6pm – 9:30pm"
+      },
+      "friday": {
+        "day": "Friday",
+        "time": "12pm – 2:30pm  /  6pm – 9:30pm"
+      },
+      "saturday": {
+        "day": "Saturday",
+        "time": "12pm – 2:30pm  /  6pm – 9:30pm"
+      },
+      "sunday": {
+        "day": "Sunday",
+        "time": "12pm – 2:30pm  /  6pm – 9:30pm"
+      }
+    }
+  },
+  "reservation": {
+    "title": "Book a Table",
+    "guests": "Number of guests",
+    "date": "Date",
+    "time": "Time",
+    "continue": "Continue",
+    "contactTitle": "Your Details",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "email": "Email",
+    "phone": "Phone",
+    "specialRequests": "Special requests",
+    "confirm": "Confirm Reservation",
+    "otpSentTo": "Code sent to",
+    "otpLabel": "Verification code",
+    "verify": "Verify",
+    "verifying": "Verifying…",
+    "otpError": "Incorrect or expired code",
+    "resendCode": "Resend code",
+    "back": "Back",
+    "confirmedTitle": "Reservation Confirmed",
+    "confirmedGuests": "{{count}} guests",
+    "confirmedEmail": "A confirmation email has been sent to",
+    "backHome": "Back to home"
+  },
+  "order": {
+    "title": "Your Order",
+    "close": "Close",
+    "total": "Total",
+    "emailOrder": "Order by Email",
+    "reserveOrder": "Reserve and Order",
+    "empty": "Your cart is empty",
+    "customerName": "Your name",
+    "customerEmail": "Email",
+    "customerPhone": "Phone (optional)",
+    "sendOtp": "Confirm order",
+    "sending": "Sending…",
+    "otpSentTo": "Code sent to",
+    "otpLabel": "Verification code",
+    "otpPlaceholder": "______",
+    "verify": "Verify",
+    "verifying": "Verifying…",
+    "otpError": "Incorrect or expired code",
+    "back": "Back",
+    "successTitle": "Order confirmed!",
+    "successBody": "We have received your order and will send you a confirmation by email.",
+    "newOrder": "New order",
+    "otpNote": "A 6-digit code will be sent to verify your email."
+  },
+  "footer": {
+    "copyright": "© 2026 Traiteur-Restaurant Lotus · Laeken, Brussels"
+  },
+  "photos": {
+    "title": "Our Gallery",
+    "subtitle": "Discover our Vietnamese and Thai dishes"
+  },
+  "eventContact": {
+    "title": "Book an Event",
+    "subtitle": "Birthdays, corporate dinners, family gatherings",
+    "firstName": "First name",
+    "lastName": "Last name",
+    "email": "Email",
+    "phone": "Phone",
+    "eventType": "Event type",
+    "eventTypes": {
+      "birthday": "Birthday",
+      "corporate": "Corporate dinner",
+      "wedding": "Wedding / Engagement",
+      "family": "Family gathering",
+      "catering": "Home catering",
+      "other": "Other"
+    },
+    "eventDate": "Preferred date",
+    "guests": "Number of guests",
+    "message": "Message / Special requests",
+    "submit": "Send request",
+    "submitting": "Sending…",
+    "otpSentTo": "Code sent to",
+    "otpLabel": "Verification code",
+    "verify": "Verify",
+    "verifying": "Verifying…",
+    "otpError": "Incorrect or expired code",
+    "resendCode": "Resend code",
+    "back": "Back",
+    "successTitle": "Request sent!",
+    "successBody": "We will contact you as soon as possible to confirm your booking.",
+    "backHome": "Back to home",
+    "required": "Required field"
+  }
+}
