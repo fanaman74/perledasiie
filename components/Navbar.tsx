@@ -6,12 +6,12 @@ import { usePathname } from 'next/navigation';
 import type { Locale } from '@/lib/i18n/config';
 
 const navLinks = [
-  { key: 'home', href: '#accueil', anchor: true },
-  { key: 'menu', href: '#menu', anchor: true },
-  { key: 'photos', href: '/photos', anchor: false },
-  { key: 'events', href: '#evenements', anchor: true },
-  { key: 'info', href: '#informations', anchor: true },
-  { key: 'contact', href: '#contact', anchor: true },
+  { key: 'home',       href: '#accueil',    anchor: true  },
+  { key: 'menus',      href: '#menus',      anchor: true  },
+  { key: 'entrees',    href: '#entrees',    anchor: true  },
+  { key: 'plats',      href: '#plats',      anchor: true  },
+  { key: 'photos',     href: '/photos',     anchor: false },
+  { key: 'contact',    href: '#contact',    anchor: true  },
   { key: 'allergenes', href: '/allergenes', anchor: false },
 ];
 

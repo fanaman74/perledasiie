@@ -1,11 +1,11 @@
 {
   "nav": {
     "home": "Home",
-    "menu": "Menu",
-    "events": "Events",
-    "info": "Information",
-    "contact": "Contact",
+    "menus": "Menus",
+    "entrees": "Starters",
+    "plats": "Mains",
     "photos": "Photos",
+    "contact": "Contact",
     "allergenes": "Allergens"
   },
   "hero": {
@@ -28,8 +28,7 @@
     "sections": {
       "thai": "Thai Specialities",
       "viet": "Vietnamese Specialities",
-      "menus": "Set Menus",
-      "fondues": "Fondues",
+      "menus": "Menus & Fondues",
       "entrees": "Starters",
       "plats": "Mains"
     },

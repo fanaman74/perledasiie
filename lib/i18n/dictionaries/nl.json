@@ -1,11 +1,11 @@
 {
   "nav": {
     "home": "Thuis",
-    "menu": "Menu",
-    "events": "Evenementen",
-    "info": "Informatie",
-    "contact": "Contact",
+    "menus": "Menu's",
+    "entrees": "Voorgerechten",
+    "plats": "Hoofdgerechten",
     "photos": "Foto's",
+    "contact": "Contact",
     "allergenes": "Allergenen"
   },
   "hero": {
@@ -28,8 +28,7 @@
     "sections": {
       "thai": "Thaise Specialiteiten",
       "viet": "Vietnamese Specialiteiten",
-      "menus": "Menu's",
-      "fondues": "Fondues",
+      "menus": "Menu's & Fondues",
       "entrees": "Voorgerechten",
       "plats": "Hoofdgerechten"
     },

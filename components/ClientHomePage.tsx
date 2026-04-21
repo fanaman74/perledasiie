@@ -8,7 +8,6 @@ import Hero from '@/components/Hero';
 import About from '@/components/About';
 import FeaturedDishes from '@/components/FeaturedDishes';
 import Menu from '@/components/Menu';
-import Events from '@/components/Events';
 import FindUs from '@/components/FindUs';
 import Reservation from '@/components/Reservation';
 import Footer from '@/components/Footer';
@@ -23,6 +22,7 @@ type MenuItem = {
   description: string;
   priceRestaurant: number;
   priceTakeaway: number | null;
+  category: string;
 };
 
 type SetMenuItem = {
@@ -98,39 +98,21 @@ export default function ClientHomePage() {
         }));
       }
 
-      // Build 4 sections
+      // Build 3 sections
       const sections: Section[] = [
         {
           id: 'menus',
           name: (dict.menu.sections as Record<string, string>).menus ?? 'Menus',
           kind: 'cards' as const,
-          setItems: (setMenusData ?? [])
-            .filter((m: Record<string, unknown>) => m.type === 'set')
-            .map((m: Record<string, unknown>) => ({
-              id: m.id as string,
-              name: (m[`name_${locale}`] || m.name_fr) as string,
-              description: (m[`description_${locale}`] || m.description_fr || '') as string,
-              price: m.price as number,
-              min_people: m.min_people as number,
-              includes: (m[`includes_${locale}`] || m.includes_fr || []) as string[],
-              type: m.type as 'set' | 'fondue',
-            })),
-        },
-        {
-          id: 'fondues',
-          name: (dict.menu.sections as Record<string, string>).fondues ?? 'Fondues',
-          kind: 'cards' as const,
-          setItems: (setMenusData ?? [])
-            .filter((m: Record<string, unknown>) => m.type === 'fondue')
-            .map((m: Record<string, unknown>) => ({
-              id: m.id as string,
-              name: (m[`name_${locale}`] || m.name_fr) as string,
-              description: (m[`description_${locale}`] || m.description_fr || '') as string,
-              price: m.price as number,
-              min_people: m.min_people as number,
-              includes: (m[`includes_${locale}`] || m.includes_fr || []) as string[],
-              type: m.type as 'set' | 'fondue',
-            })),
+          setItems: (setMenusData ?? []).map((m: Record<string, unknown>) => ({
+            id: m.id as string,
+            name: (m[`name_${locale}`] || m.name_fr) as string,
+            description: (m[`description_${locale}`] || m.description_fr || '') as string,
+            price: m.price as number,
+            min_people: m.min_people as number,
+            includes: (m[`includes_${locale}`] || m.includes_fr || []) as string[],
+            type: m.type as 'set' | 'fondue',
+          })),
         },
         {
           id: 'entrees',
@@ -145,6 +127,7 @@ export default function ClientHomePage() {
               description: (m[`description_${locale}`] || m.description_fr || '') as string,
               priceRestaurant: m.price_restaurant as number,
               priceTakeaway: m.price_takeaway as number | null,
+              category: (m[`category_${locale}`] || m.category_fr || '') as string,
             })),
         },
         {
@@ -160,6 +143,7 @@ export default function ClientHomePage() {
               description: (m[`description_${locale}`] || m.description_fr || '') as string,
               priceRestaurant: m.price_restaurant as number,
               priceTakeaway: m.price_takeaway as number | null,
+              category: (m[`category_${locale}`] || m.category_fr || '') as string,
             })),
         },
       ];
@@ -186,7 +170,7 @@ export default function ClientHomePage() {
           <span className="text-text-muted text-sm uppercase tracking-widest">Chargement…</span>
         </section>
       )}
-      <ScrollReveal><Events dict={dict.events} /></ScrollReveal>
+      <div id="contact" className="scroll-mt-[72px]" />
       <ScrollReveal><FindUs dict={dict.findUs} /></ScrollReveal>
       <Reservation dict={dict.reservation} locale={locale} />
       <Footer dict={{ nav: dict.nav, findUs: dict.findUs, footer: dict.footer }} />
