@@ -28,7 +28,8 @@
     "sections": {
       "thai": "Thai Specialities",
       "viet": "Vietnamese Specialities",
-      "menus": "Menus & Fondues",
+      "menus": "Menus",
+      "fondues": "Fondues",
       "entrees": "Starters",
       "plats": "Mains"
     },
