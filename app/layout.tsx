@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Cinzel, Jost } from 'next/font/google';
+import { Cinzel, Jost, Chango } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import { OrderProvider } from '@/components/OrderProvider';
@@ -18,14 +18,21 @@ const jost = Jost({
   display: 'swap',
 });
 
+const chango = Chango({
+  weight: '400',
+  subsets: ['latin'],
+  variable: '--font-chango',
+  display: 'swap',
+});
+
 export const metadata: Metadata = {
-  title: "Perle d'Asie — Spécialités Cuisines Asiatiques | Jette, Bruxelles",
-  description: "Restaurant Perle d'Asie — Spécialités Cuisines Asiatiques depuis 1997. Avenue de l'Exposition 266, 1090 Jette, Bruxelles.",
+  title: "Perle d'Asie — Spécialités Cuisines Asiatiques | Laeken, Bruxelles",
+  description: "Restaurant Perle d'Asie — Spécialités Cuisines Asiatiques depuis 1997. Avenue de l'Exposition 266, 1090 Laeken, Bruxelles.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr" suppressHydrationWarning className={`${cinzel.variable} ${jost.variable}`}>
+    <html lang="fr" suppressHydrationWarning className={`${cinzel.variable} ${jost.variable} ${chango.variable}`}>
       <body className="font-body bg-bg text-text">
         <LanguageProvider>
           <ThemeProvider>

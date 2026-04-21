@@ -46,7 +46,7 @@ export async function POST(req: NextRequest) {
         <div style="font-family:sans-serif;max-width:480px;margin:0 auto;color:#1a1814">
           <div style="background:#3d7022;padding:24px 32px">
             <h1 style="color:#fff;margin:0;font-size:20px;letter-spacing:2px">PERLE D'ASIE</h1>
-            <p style="color:rgba(255,255,255,0.8);margin:4px 0 0;font-size:13px">Restaurant — Jette, Bruxelles</p>
+            <p style="color:rgba(255,255,255,0.8);margin:4px 0 0;font-size:13px">Restaurant — Laeken, Bruxelles</p>
           </div>
           <div style="padding:32px;background:#fff;border:1px solid #e8e2da">
             ${firstName ? `<p style="margin:0 0 16px;font-size:15px">Bonjour ${firstName},</p>` : ''}
@@ -64,7 +64,7 @@ export async function POST(req: NextRequest) {
             </p>
           </div>
           <div style="padding:16px 32px;background:#f0ece6;font-size:12px;color:#9a9080;text-align:center">
-            Restaurant Perle d'Asie — Avenue de l'Exposition 266, 1090 Jette
+            Restaurant Perle d'Asie — Avenue de l'Exposition 266, 1090 Laeken
           </div>
         </div>`,
     });

@@ -20,7 +20,7 @@ export default function Hero({ dict }: { dict: HeroDict }) {
       >
         {/* Mixkit: Chinese wok cooking — free license */}
         <source
-          src="https://assets.mixkit.co/videos/3121/3121-720.mp4"
+          src="https://videos.pexels.com/video-files/2620043/2620043-uhd_2560_1440_25fps.mp4"
           type="video/mp4"
         />
       </video>
@@ -28,15 +28,15 @@ export default function Hero({ dict }: { dict: HeroDict }) {
       <div className="absolute inset-0 bg-black/55" />
 
       <div className="relative z-10 text-center px-6 flex flex-col items-center gap-5">
-        <span className="text-xs uppercase tracking-[0.3em] text-accent hero-animate hero-animate-delay-1">
+        <span className="text-xs uppercase tracking-[0.3em] text-accent font-bold hero-animate hero-animate-delay-1">
           {dict.superscript}
         </span>
 
-        <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-light max-w-[700px] hero-animate hero-animate-delay-2">
+        <h1 className="font-hero text-4xl md:text-5xl lg:text-6xl max-w-[700px] hero-animate hero-animate-delay-2">
           {dict.title}
         </h1>
 
-        <p className="text-text-muted max-w-[500px] hero-animate hero-animate-delay-3">
+        <p className="text-text-muted font-bold max-w-[500px] hero-animate hero-animate-delay-3">
           {dict.subtitle}
         </p>
 

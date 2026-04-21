@@ -55,7 +55,7 @@ export default function AllergenesPage() {
             </div>
 
             <p className="text-text-muted text-xs text-center mt-12">
-              Perle d&apos;Asie — Avenue de l&apos;Exposition 266, 1090 Jette, Bruxelles<br />
+              Perle d&apos;Asie — Avenue de l&apos;Exposition 266, 1090 Laeken, Bruxelles<br />
               SPRL Golden Peony — TVA: BE0694 792 984
             </p>
           </div>
@@ -63,7 +63,7 @@ export default function AllergenesPage() {
       </main>
       <Footer dict={{
         nav: { home: 'Accueil', menus: 'Menus', entrees: 'Entrées', plats: 'Plats', photos: 'Photos', contact: 'Contact', allergenes: 'Allergènes' },
-        findUs: { address: "Avenue de l'Exposition 266, 1090 Jette", phone: '02 478 88 80' },
+        findUs: { address: "Avenue de l'Exposition 266, 1090 Laeken", phone: '02 478 88 80' },
         footer: { copyright: `© ${new Date().getFullYear()} Perle d'Asie. Tous droits réservés.` },
       }} />
     </>

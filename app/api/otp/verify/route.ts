@@ -107,12 +107,12 @@ export async function POST(req: NextRequest) {
             ${!forRestaurant ? `
               <div style="border-left:3px solid #3d7022;padding:12px 16px;background:#f8fdf5;font-size:13px;color:#6b6358">
                 <strong style="color:#1a1814">Restaurant Perle d'Asie</strong><br>
-                Avenue de l'Exposition 266, 1090 Jette<br>
+                Avenue de l'Exposition 266, 1090 Laeken<br>
                 Tél : <a href="tel:+3223664740" style="color:#3d7022">02 366 47 40</a>
               </div>` : ''}
           </div>
           <div style="padding:16px 32px;background:#f0ece6;font-size:12px;color:#9a9080;text-align:center">
-            Restaurant Perle d'Asie — Jette, Bruxelles
+            Restaurant Perle d'Asie — Laeken, Bruxelles
           </div>
         </div>`;
 

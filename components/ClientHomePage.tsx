@@ -6,14 +6,11 @@ import ScrollReveal from '@/components/ScrollReveal';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
-import FeaturedDishes from '@/components/FeaturedDishes';
 import Menu from '@/components/Menu';
 import FindUs from '@/components/FindUs';
 import Reservation from '@/components/Reservation';
 import Footer from '@/components/Footer';
 import TakeawayPanel from '@/components/TakeawayPanel';
-
-type Dish = { id: string; name: string; description: string; price: number; image: string | null };
 
 type MenuItem = {
   id: string;
@@ -46,7 +43,6 @@ type Section = {
 export default function ClientHomePage() {
   const { locale, dict } = useLanguage();
   const [menuData, setMenuData] = useState<Section[]>([]);
-  const [featured, setFeatured] = useState<Dish[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -58,7 +54,6 @@ export default function ClientHomePage() {
       const [
         { data: menuItems },
         { data: setMenusData },
-        { data: featuredItems },
       ] = await Promise.all([
         supabase
           .from('menu_items')
@@ -70,33 +65,7 @@ export default function ClientHomePage() {
           .select('*')
           .eq('active', true)
           .order('display_order'),
-        supabase
-          .from('lotus_items')
-          .select('id, price_restaurant, featured_image')
-          .eq('is_featured', true)
-          .eq('active', true),
       ]);
-
-      // Build featured dishes
-      let featuredDishes: Dish[] = [];
-      if (featuredItems && featuredItems.length > 0) {
-        const ids = featuredItems.map((i: Record<string, unknown>) => i.id as string);
-        const { data: trans } = await supabase
-          .from('lotus_item_translations')
-          .select('item_id, name, description')
-          .eq('locale', locale)
-          .in('item_id', ids);
-        const tMap = Object.fromEntries(
-          ((trans ?? []) as Array<{ item_id: string; name: string; description: string }>).map(t => [t.item_id, t])
-        );
-        featuredDishes = featuredItems.map((i: Record<string, unknown>) => ({
-          id: i.id as string,
-          name: tMap[i.id as string]?.name || (i.id as string),
-          description: tMap[i.id as string]?.description || '',
-          price: Number(i.price_restaurant),
-          image: i.featured_image as string | null,
-        }));
-      }
 
       // Build 3 sections
       const sections: Section[] = [
@@ -149,7 +118,6 @@ export default function ClientHomePage() {
       ];
 
       setMenuData(sections);
-      setFeatured(featuredDishes);
       setLoading(false);
     }
 
@@ -161,9 +129,6 @@ export default function ClientHomePage() {
       <Navbar />
       <Hero dict={dict.hero} />
       <ScrollReveal><About dict={dict.about} /></ScrollReveal>
-      <ScrollReveal>
-        <FeaturedDishes dict={dict.featured} dishes={featured} />
-      </ScrollReveal>
       {!loading && <Menu sections={menuData} dict={dict.menu} />}
       {loading && (
         <section id="menu" className="py-24 px-6 flex justify-center items-center min-h-[300px]">
