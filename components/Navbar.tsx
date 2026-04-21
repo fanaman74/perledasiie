@@ -12,6 +12,7 @@ const navLinks = [
   { key: 'events', href: '#evenements', anchor: true },
   { key: 'info', href: '#informations', anchor: true },
   { key: 'contact', href: '#contact', anchor: true },
+  { key: 'allergenes', href: '/allergenes', anchor: false },
 ];
 
 const langs: Locale[] = ['fr', 'nl', 'en'];
@@ -23,7 +24,6 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // On non-home pages, anchor links must go back to /#section
   const isHome = pathname === '/';
   function resolveHref(link: typeof navLinks[0]) {
     if (!link.anchor) return link.href;
@@ -45,14 +45,16 @@ export default function Navbar() {
     <>
       <nav className={`fixed top-0 left-0 right-0 z-50 h-[72px] flex items-center transition-all duration-[400ms] ease-in-out ${scrolled ? 'bg-bg/95 backdrop-blur-md border-b border-border' : 'bg-transparent'}`}>
         <div className="w-full max-w-[1200px] mx-auto px-6 flex items-center">
-          <a href={isHome ? '#accueil' : '/'} className="font-display uppercase tracking-[0.15em] text-2xl text-accent no-underline">LOTUS</a>
+          <a href={isHome ? '#accueil' : '/'} className="font-display uppercase tracking-[0.12em] text-xl text-accent no-underline whitespace-nowrap">
+            PERLE D&apos;ASIE
+          </a>
 
-          <div className="hidden md:flex items-center gap-8 flex-1 justify-center">
+          <div className="hidden md:flex items-center gap-6 flex-1 justify-center">
             {navLinks.map(link => (
               <a
                 key={link.key}
                 href={resolveHref(link)}
-                className={`text-sm uppercase tracking-wider hover:text-accent transition-colors font-medium ${pathname === link.href ? 'text-accent' : 'text-text'}`}
+                className={`text-xs uppercase tracking-wider hover:text-accent transition-colors font-medium ${pathname === link.href ? 'text-accent' : 'text-text'}`}
               >
                 {(dict.nav as Record<string, string>)[link.key]}
               </a>
@@ -90,7 +92,7 @@ export default function Navbar() {
       {menuOpen && (
         <div className="fixed inset-0 z-40 bg-bg/98 flex flex-col items-center justify-center gap-8 md:hidden">
           {navLinks.map(link => (
-            <a key={link.key} href={resolveHref(link)} onClick={() => setMenuOpen(false)} className="text-2xl font-display italic text-text hover:text-accent transition-colors">
+            <a key={link.key} href={resolveHref(link)} onClick={() => setMenuOpen(false)} className="text-2xl font-display text-text hover:text-accent transition-colors">
               {(dict.nav as Record<string, string>)[link.key]}
             </a>
           ))}
