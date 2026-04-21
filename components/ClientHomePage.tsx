@@ -77,20 +77,8 @@ export default function ClientHomePage() {
         type: m.type as 'set' | 'fondue',
       });
 
-      // Build 4 sections
+      // Build 4 sections — entrées/plats first, then menus/fondues
       const sections: Section[] = [
-        {
-          id: 'menus',
-          name: (dict.menu.sections as Record<string, string>).menus ?? 'Menus',
-          kind: 'cards' as const,
-          setItems: (setMenusData ?? []).filter((m: Record<string, unknown>) => m.type === 'set').map(mapSetItem),
-        },
-        {
-          id: 'fondues',
-          name: (dict.menu.sections as Record<string, string>).fondues ?? 'Fondues',
-          kind: 'cards' as const,
-          setItems: (setMenusData ?? []).filter((m: Record<string, unknown>) => m.type === 'fondue').map(mapSetItem),
-        },
         {
           id: 'entrees',
           name: (dict.menu.sections as Record<string, string>).entrees ?? 'Entrées',
@@ -122,6 +110,18 @@ export default function ClientHomePage() {
               priceTakeaway: m.price_takeaway as number | null,
               category: (m[`category_${locale}`] || m.category_fr || '') as string,
             })),
+        },
+        {
+          id: 'menus',
+          name: (dict.menu.sections as Record<string, string>).menus ?? 'Menus',
+          kind: 'cards' as const,
+          setItems: (setMenusData ?? []).filter((m: Record<string, unknown>) => m.type === 'set').map(mapSetItem),
+        },
+        {
+          id: 'fondues',
+          name: (dict.menu.sections as Record<string, string>).fondues ?? 'Fondues',
+          kind: 'cards' as const,
+          setItems: (setMenusData ?? []).filter((m: Record<string, unknown>) => m.type === 'fondue').map(mapSetItem),
         },
       ];
 
