@@ -9,15 +9,15 @@
     "allergenes": "Allergènes"
   },
   "hero": {
-    "superscript": "Restaurant · Traiteur · Laeken",
-    "title": "La cuisine Vietnamienne & Thaïlandaise de Laeken.",
-    "subtitle": "Une table de quartier chaleureuse — où la tradition rencontre le plaisir simple d'un plat bien fait.",
+    "superscript": "Restaurant · Traiteur · Jette, Bruxelles",
+    "title": "Spécialités Cuisines Asiatiques depuis 1997",
+    "subtitle": "Découvrez l'authenticité des saveurs asiatiques dans un cadre chaleureux au cœur de Jette.",
     "cta": "Voir le menu",
     "scroll": "Scroll"
   },
   "about": {
-    "title": "Notre Table",
-    "body": "Situé au cœur du quartier de Laeken à Bruxelles, Lotus vous accueille dans une ambiance chaleureuse et conviviale. Cantine populaire de référence pour la cuisine vietnamienne et thaïlandaise, nos plats sont généralement partagés entre amis, famille ou collègues. Notre mission est simple : servir des plats délicieux et abordables que vous voudrez commander semaine après semaine."
+    "title": "Notre Histoire",
+    "body": "Depuis 1997, Perle d'Asie vous accueille dans un cadre chaleureux pour découvrir les saveurs authentiques de la cuisine asiatique. Entre fondues, menus généreux et plats à la carte, notre cuisine célèbre les traditions culinaires d'Asie avec passion et générosité. Livraison gratuite dès 20€ — réduction de 5% pour le retrait en magasin."
   },
   "featured": {
     "title": "Nos Spécialités"
@@ -27,7 +27,11 @@
     "addButton": "+ Ajouter",
     "sections": {
       "thai": "Spécialités Thaïlandaises",
-      "viet": "Spécialités Vietnamiennes"
+      "viet": "Spécialités Vietnamiennes",
+      "menus": "Menus",
+      "fondues": "Fondues",
+      "entrees": "Entrées",
+      "plats": "Plats"
     },
     "subcategories": {
       "thai_potages": "Potages",
@@ -446,37 +450,37 @@
   },
   "findUs": {
     "title": "Nous Trouver",
-    "address": "17 avenue de Busleyden, 1020 Laeken, Belgique",
-    "phone": "+32 2 366 47 40",
-    "hoursTitle": "Heures d'ouverture",
+    "address": "Avenue de l'Exposition 266, 1090 Jette, Bruxelles",
+    "phone": "02 478 88 80",
+    "hoursTitle": "Horaires",
     "hours": {
       "monday": {
         "day": "Lundi",
-        "time": "12h – 14h30  /  18h – 21h30"
+        "time": "10h30–13h45 · 17h15–22h00"
       },
       "tuesday": {
         "day": "Mardi",
-        "time": "12h – 14h30  /  18h – 21h30"
+        "time": "Fermé"
       },
       "wednesday": {
         "day": "Mercredi",
-        "time": "Fermé"
+        "time": "10h30–13h45 · 17h15–22h00"
       },
       "thursday": {
         "day": "Jeudi",
-        "time": "12h – 14h30  /  18h – 21h30"
+        "time": "10h30–13h45 · 17h15–22h00"
       },
       "friday": {
         "day": "Vendredi",
-        "time": "12h – 14h30  /  18h – 21h30"
+        "time": "10h30–13h45 · 17h15–22h00"
       },
       "saturday": {
         "day": "Samedi",
-        "time": "12h – 14h30  /  18h – 21h30"
+        "time": "10h30–13h45 · 17h15–22h00"
       },
       "sunday": {
         "day": "Dimanche",
-        "time": "12h – 14h30  /  18h – 21h30"
+        "time": "10h30–13h45 · 17h15–22h00"
       }
     }
   },
@@ -530,7 +534,7 @@
     "otpNote": "Un code à 6 chiffres vous sera envoyé pour confirmer votre email."
   },
   "footer": {
-    "copyright": "© 2026 Traiteur-Restaurant Lotus · Laeken, Bruxelles"
+    "copyright": "© 2025 Perle d'Asie. Tous droits réservés."
   },
   "photos": {
     "title": "Notre Galerie",

@@ -1,6 +1,6 @@
 {
   "nav": {
-    "home": "Home",
+    "home": "Thuis",
     "menu": "Menu",
     "events": "Evenementen",
     "info": "Informatie",
@@ -9,15 +9,15 @@
     "allergenes": "Allergenen"
   },
   "hero": {
-    "superscript": "Restaurant · Traiteur · Laken",
-    "title": "De Vietnamese & Thaise keuken van Laken.",
-    "subtitle": "Een warm buurtrestaurant — waar traditie en het simpele plezier van een goed bereid gerecht samenkomen.",
+    "superscript": "Restaurant · Traiteur · Jette, Brussel",
+    "title": "Aziatische Keukenspecialiteiten sinds 1997",
+    "subtitle": "Ontdek de authenticiteit van Aziatische smaken in een warm kader in het hart van Jette.",
     "cta": "Bekijk het menu",
     "scroll": "Scroll"
   },
   "about": {
-    "title": "Onze Tafel",
-    "body": "Gelegen in het hart van de wijk Laken in Brussel, verwelkomt Lotus u in een warme en gezellige sfeer. Als populaire buurtcantine voor Vietnamese en Thaise keuken worden onze gerechten doorgaans gedeeld met vrienden, familie of collega's. Onze missie is eenvoudig: heerlijke en betaalbare gerechten serveren die u week na week opnieuw wilt bestellen."
+    "title": "Ons Verhaal",
+    "body": "Sinds 1997 verwelkomt Perle d'Asie u in een warme sfeer om de authentieke smaken van de Aziatische keuken te ontdekken. Van fondues tot overvloedige menu's en à la carte gerechten — onze keuken viert culinaire Aziatische tradities met passie. Gratis levering vanaf €20 — 5% korting bij afhaling."
   },
   "featured": {
     "title": "Onze Specialiteiten"
@@ -27,7 +27,11 @@
     "addButton": "+ Toevoegen",
     "sections": {
       "thai": "Thaise Specialiteiten",
-      "viet": "Vietnamese Specialiteiten"
+      "viet": "Vietnamese Specialiteiten",
+      "menus": "Menu's",
+      "fondues": "Fondues",
+      "entrees": "Voorgerechten",
+      "plats": "Hoofdgerechten"
     },
     "subcategories": {
       "thai_potages": "Soepen",
@@ -47,7 +51,7 @@
       "viet_vegetariens": "Vegetarisch"
     },
     "priceRestaurant": "Rest.",
-    "priceTraiteur": "Afh.",
+    "priceTraiteur": "Trait.",
     "dish": {
       "th01": {
         "name": "Tom Yam Kai",
@@ -446,37 +450,37 @@
   },
   "findUs": {
     "title": "Ons Vinden",
-    "address": "17 avenue de Busleyden, 1020 Laken, België",
-    "phone": "+32 2 366 47 40",
+    "address": "Tentoonstellingslaan 266, 1090 Jette, Brussel",
+    "phone": "02 478 88 80",
     "hoursTitle": "Openingsuren",
     "hours": {
       "monday": {
         "day": "Maandag",
-        "time": "12u – 14u30  /  18u – 21u30"
+        "time": "10u30–13u45 · 17u15–22u00"
       },
       "tuesday": {
         "day": "Dinsdag",
-        "time": "12u – 14u30  /  18u – 21u30"
+        "time": "Gesloten"
       },
       "wednesday": {
         "day": "Woensdag",
-        "time": "Gesloten"
+        "time": "10u30–13u45 · 17u15–22u00"
       },
       "thursday": {
         "day": "Donderdag",
-        "time": "12u – 14u30  /  18u – 21u30"
+        "time": "10u30–13u45 · 17u15–22u00"
       },
       "friday": {
         "day": "Vrijdag",
-        "time": "12u – 14u30  /  18u – 21u30"
+        "time": "10u30–13u45 · 17u15–22u00"
       },
       "saturday": {
         "day": "Zaterdag",
-        "time": "12u – 14u30  /  18u – 21u30"
+        "time": "10u30–13u45 · 17u15–22u00"
       },
       "sunday": {
         "day": "Zondag",
-        "time": "12u – 14u30  /  18u – 21u30"
+        "time": "10u30–13u45 · 17u15–22u00"
       }
     }
   },
@@ -530,7 +534,7 @@
     "otpNote": "U ontvangt een 6-cijferige code om uw e-mail te bevestigen."
   },
   "footer": {
-    "copyright": "© 2026 Traiteur-Restaurant Lotus · Laken, Brussel"
+    "copyright": "© 2025 Perle d'Asie. Alle rechten voorbehouden."
   },
   "photos": {
     "title": "Onze Galerij",

@@ -3,21 +3,21 @@
     "home": "Home",
     "menu": "Menu",
     "events": "Events",
-    "info": "Info",
+    "info": "Information",
     "contact": "Contact",
     "photos": "Photos",
     "allergenes": "Allergens"
   },
   "hero": {
-    "superscript": "Restaurant · Caterer · Laeken",
-    "title": "Vietnamese & Thai cuisine in Laeken.",
-    "subtitle": "A warm neighbourhood table — where tradition meets the simple pleasure of a well-crafted dish.",
+    "superscript": "Restaurant · Takeaway · Jette, Brussels",
+    "title": "Asian Cuisine Specialties Since 1997",
+    "subtitle": "Discover the authentic flavours of Asian cuisine in a warm and welcoming setting in the heart of Jette.",
     "cta": "View the menu",
     "scroll": "Scroll"
   },
   "about": {
-    "title": "Our Table",
-    "body": "Located in the heart of the Laeken neighbourhood in Brussels, Lotus welcomes you in a warm and friendly setting. A beloved local canteen for Vietnamese and Thai cuisine, our dishes are meant to be shared among friends, family, and colleagues. Our mission is simple: serve delicious, affordable food you'll want to order week after week."
+    "title": "Our Story",
+    "body": "Since 1997, Perle d'Asie has welcomed you to discover the authentic flavours of Asian cuisine. From fondues to generous set menus and à la carte dishes — our kitchen celebrates Asian culinary traditions with passion. Free delivery from €20 — 5% discount for in-store pickup."
   },
   "featured": {
     "title": "Our Specialities"
@@ -27,7 +27,11 @@
     "addButton": "+ Add",
     "sections": {
       "thai": "Thai Specialities",
-      "viet": "Vietnamese Specialities"
+      "viet": "Vietnamese Specialities",
+      "menus": "Set Menus",
+      "fondues": "Fondues",
+      "entrees": "Starters",
+      "plats": "Mains"
     },
     "subcategories": {
       "thai_potages": "Soups",
@@ -46,8 +50,8 @@
       "viet_nouilles": "Noodles",
       "viet_vegetariens": "Vegetarian"
     },
-    "priceRestaurant": "Dine-in",
-    "priceTraiteur": "T/away",
+    "priceRestaurant": "Rest.",
+    "priceTraiteur": "Takeaway",
     "dish": {
       "th01": {
         "name": "Tom Yam Kai",
@@ -446,37 +450,37 @@
   },
   "findUs": {
     "title": "Find Us",
-    "address": "17 avenue de Busleyden, 1020 Laeken, Belgium",
-    "phone": "+32 2 366 47 40",
+    "address": "Avenue de l'Exposition 266, 1090 Jette, Brussels",
+    "phone": "02 478 88 80",
     "hoursTitle": "Opening Hours",
     "hours": {
       "monday": {
         "day": "Monday",
-        "time": "12pm – 2:30pm  /  6pm – 9:30pm"
+        "time": "10:30–13:45 · 17:15–22:00"
       },
       "tuesday": {
         "day": "Tuesday",
-        "time": "12pm – 2:30pm  /  6pm – 9:30pm"
+        "time": "Closed"
       },
       "wednesday": {
         "day": "Wednesday",
-        "time": "Closed"
+        "time": "10:30–13:45 · 17:15–22:00"
       },
       "thursday": {
         "day": "Thursday",
-        "time": "12pm – 2:30pm  /  6pm – 9:30pm"
+        "time": "10:30–13:45 · 17:15–22:00"
       },
       "friday": {
         "day": "Friday",
-        "time": "12pm – 2:30pm  /  6pm – 9:30pm"
+        "time": "10:30–13:45 · 17:15–22:00"
       },
       "saturday": {
         "day": "Saturday",
-        "time": "12pm – 2:30pm  /  6pm – 9:30pm"
+        "time": "10:30–13:45 · 17:15–22:00"
       },
       "sunday": {
         "day": "Sunday",
-        "time": "12pm – 2:30pm  /  6pm – 9:30pm"
+        "time": "10:30–13:45 · 17:15–22:00"
       }
     }
   },
@@ -530,7 +534,7 @@
     "otpNote": "A 6-digit code will be sent to verify your email."
   },
   "footer": {
-    "copyright": "© 2026 Traiteur-Restaurant Lotus · Laeken, Brussels"
+    "copyright": "© 2025 Perle d'Asie. All rights reserved."
   },
   "photos": {
     "title": "Our Gallery",
