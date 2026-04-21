@@ -3,15 +3,15 @@ import { createServerClient } from '@/lib/supabase-server';
 
 export async function POST(req: NextRequest) {
   try {
-    const token = req.cookies.get('lotus_admin_token')?.value;
+    const token = req.cookies.get('admin_token')?.value;
 
     if (token) {
       const supabase = createServerClient();
-      await supabase.from('lotus_admin_sessions').delete().eq('token', token);
+      await supabase.from('admin_sessions').delete().eq('token', token);
     }
 
     const res = NextResponse.json({ success: true });
-    res.cookies.set('lotus_admin_token', '', {
+    res.cookies.set('admin_token', '', {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'lax',

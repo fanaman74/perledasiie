@@ -14,7 +14,7 @@ export async function POST(req: NextRequest) {
 
     // Verify OTP
     const { data: otps } = await supabase
-      .from('lotus_otps')
+      .from('otps')
       .select('id, code, expires_at, used')
       .eq('email', email)
       .eq('used', false)
@@ -36,11 +36,11 @@ export async function POST(req: NextRequest) {
     }
 
     // Mark OTP as used
-    await supabase.from('lotus_otps').update({ used: true }).eq('id', otp.id);
+    await supabase.from('otps').update({ used: true }).eq('id', otp.id);
 
     // Save order
     const { data: order, error: orderError } = await supabase
-      .from('lotus_orders')
+      .from('orders')
       .insert({
         customer_name: customerName,
         customer_email: email,
@@ -78,7 +78,7 @@ export async function POST(req: NextRequest) {
       const orderHtml = (forRestaurant: boolean) => `
         <div style="font-family:sans-serif;max-width:560px;margin:0 auto;color:#1a1814">
           <div style="background:#3d7022;padding:24px 32px">
-            <h1 style="color:#fff;margin:0;font-size:20px;letter-spacing:2px">LOTUS</h1>
+            <h1 style="color:#fff;margin:0;font-size:20px;letter-spacing:2px">PERLE D'ASIE</h1>
             <p style="color:rgba(255,255,255,0.8);margin:4px 0 0;font-size:13px">
               ${forRestaurant ? 'Nouvelle commande traiteur' : 'Confirmation de commande'}
             </p>
@@ -106,28 +106,28 @@ export async function POST(req: NextRequest) {
             </table>
             ${!forRestaurant ? `
               <div style="border-left:3px solid #3d7022;padding:12px 16px;background:#f8fdf5;font-size:13px;color:#6b6358">
-                <strong style="color:#1a1814">Traiteur-Restaurant Lotus</strong><br>
-                Av. du Laerbeek 64, 1090 Laeken<br>
+                <strong style="color:#1a1814">Restaurant Perle d'Asie</strong><br>
+                Avenue de l'Exposition 266, 1090 Jette<br>
                 Tél : <a href="tel:+3223664740" style="color:#3d7022">02 366 47 40</a>
               </div>` : ''}
           </div>
           <div style="padding:16px 32px;background:#f0ece6;font-size:12px;color:#9a9080;text-align:center">
-            Traiteur-Restaurant Lotus — Laeken, Bruxelles
+            Restaurant Perle d'Asie — Jette, Bruxelles
           </div>
         </div>`;
 
       await Promise.all([
         resend.emails.send({
-          from: `Lotus Website <${fromEmail}>`,
+          from: `Perle d'Asie <${fromEmail}>`,
           to: [restaurantEmail],
           subject: `🛒 Commande traiteur — ${customerName} (${Number(total).toFixed(2)}€)`,
           html: orderHtml(true),
           replyTo: email,
         }),
         resend.emails.send({
-          from: `Restaurant Lotus <${fromEmail}>`,
+          from: `Restaurant Perle d'Asie <${fromEmail}>`,
           to: [email],
-          subject: `Votre commande chez Lotus — confirmation`,
+          subject: `Votre commande chez Perle d'Asie — confirmation`,
           html: orderHtml(false),
         }),
       ]).catch(err => console.error('Email send error:', err));

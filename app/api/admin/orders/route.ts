@@ -3,7 +3,7 @@ import { createServerClient } from '@/lib/supabase-server';
 import { verifyAdminSession } from '@/lib/admin-auth';
 
 async function checkAuth(req: NextRequest) {
-  const token = req.cookies.get('lotus_admin_token')?.value;
+  const token = req.cookies.get('admin_token')?.value;
   if (!token || !(await verifyAdminSession(token))) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
@@ -16,7 +16,7 @@ export async function GET(req: NextRequest) {
 
   const supabase = createServerClient();
   const { data, error } = await supabase
-    .from('lotus_orders')
+    .from('orders')
     .select('*')
     .order('created_at', { ascending: false })
     .limit(50);
@@ -37,7 +37,7 @@ export async function PATCH(req: NextRequest) {
 
     const supabase = createServerClient();
     const { error } = await supabase
-      .from('lotus_orders')
+      .from('orders')
       .update({ status })
       .eq('id', id);
 

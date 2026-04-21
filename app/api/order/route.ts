@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
     }
 
     const supabase = createServerClient();
-    const { data, error } = await supabase.from('lotus_orders').insert({
+    const { data, error } = await supabase.from('orders').insert({
       customer_name: customerName,
       customer_email: customerEmail,
       customer_phone: customerPhone || null,

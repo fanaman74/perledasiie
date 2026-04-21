@@ -14,13 +14,13 @@ export async function POST(req: NextRequest) {
     const expiresAt = new Date(Date.now() + 24 * 60 * 60 * 1000); // 24h
 
     const supabase = createServerClient();
-    await supabase.from('lotus_admin_sessions').insert({
+    await supabase.from('admin_sessions').insert({
       token,
       expires_at: expiresAt.toISOString(),
     });
 
     const res = NextResponse.json({ success: true });
-    res.cookies.set('lotus_admin_token', token, {
+    res.cookies.set('admin_token', token, {
       httpOnly: true,
       secure: process.env.NODE_ENV === 'production',
       sameSite: 'lax',

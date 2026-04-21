@@ -37,7 +37,7 @@ export default function AdminLoginPage() {
   return (
     <div className="min-h-screen bg-bg flex items-center justify-center px-4">
       <div className="w-full max-w-sm">
-        <h1 className="text-2xl font-display text-accent text-center mb-8">Lotus Admin</h1>
+        <h1 className="text-2xl font-display text-accent text-center mb-8">Perle d'Asie Admin</h1>
         <form onSubmit={handleSubmit} className="bg-surface rounded-lg p-6 space-y-4">
           {error && (
             <div className="bg-red-900/30 border border-red-500/50 text-red-300 px-3 py-2 rounded text-sm">

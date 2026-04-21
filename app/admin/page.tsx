@@ -8,7 +8,7 @@ export const dynamic = 'force-dynamic';
 
 export default async function AdminDashboard() {
   const cookieStore = await cookies();
-  const token = cookieStore.get('lotus_admin_token')?.value;
+  const token = cookieStore.get('admin_token')?.value;
   if (!token || !(await verifyAdminSession(token))) {
     redirect('/admin/login');
   }
@@ -16,9 +16,9 @@ export default async function AdminDashboard() {
   const supabase = createServerClient();
 
   const [{ data: reservations }, { data: orders }, { data: events }] = await Promise.all([
-    supabase.from('lotus_reservations').select('*').order('created_at', { ascending: false }).limit(20),
-    supabase.from('lotus_orders').select('*').order('created_at', { ascending: false }).limit(20),
-    supabase.from('lotus_event_requests').select('*').order('created_at', { ascending: false }).limit(50),
+    supabase.from('reservations').select('*').order('created_at', { ascending: false }).limit(20),
+    supabase.from('orders').select('*').order('created_at', { ascending: false }).limit(20),
+    supabase.from('event_requests').select('*').order('created_at', { ascending: false }).limit(50),
   ]);
 
   return (

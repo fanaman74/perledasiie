@@ -16,10 +16,10 @@ export async function POST(req: NextRequest) {
 
     // Invalidate any previous unused OTPs for this email
     const supabase = createServerClient();
-    await supabase.from('lotus_otps').update({ used: true }).eq('email', email).eq('used', false);
+    await supabase.from('otps').update({ used: true }).eq('email', email).eq('used', false);
 
     // Store new OTP
-    const { error: dbError } = await supabase.from('lotus_otps').insert({
+    const { error: dbError } = await supabase.from('otps').insert({
       email,
       code,
       expires_at: expiresAt.toISOString(),
@@ -39,14 +39,14 @@ export async function POST(req: NextRequest) {
     const firstName = name?.split(' ')[0] || '';
 
     const { error: emailError } = await resend.emails.send({
-      from: `Restaurant Lotus <${fromEmail}>`,
+      from: `Restaurant Perle d'Asie <${fromEmail}>`,
       to: [email],
-      subject: `${code} — Votre code de vérification Lotus`,
+      subject: `${code} — Votre code de vérification Perle d'Asie`,
       html: `
         <div style="font-family:sans-serif;max-width:480px;margin:0 auto;color:#1a1814">
           <div style="background:#3d7022;padding:24px 32px">
-            <h1 style="color:#fff;margin:0;font-size:20px;letter-spacing:2px">LOTUS</h1>
-            <p style="color:rgba(255,255,255,0.8);margin:4px 0 0;font-size:13px">Traiteur-Restaurant — Laeken, Bruxelles</p>
+            <h1 style="color:#fff;margin:0;font-size:20px;letter-spacing:2px">PERLE D'ASIE</h1>
+            <p style="color:rgba(255,255,255,0.8);margin:4px 0 0;font-size:13px">Restaurant — Jette, Bruxelles</p>
           </div>
           <div style="padding:32px;background:#fff;border:1px solid #e8e2da">
             ${firstName ? `<p style="margin:0 0 16px;font-size:15px">Bonjour ${firstName},</p>` : ''}
@@ -64,7 +64,7 @@ export async function POST(req: NextRequest) {
             </p>
           </div>
           <div style="padding:16px 32px;background:#f0ece6;font-size:12px;color:#9a9080;text-align:center">
-            Traiteur-Restaurant Lotus — Av. du Laerbeek 64, 1090 Laeken
+            Restaurant Perle d'Asie — Avenue de l'Exposition 266, 1090 Jette
           </div>
         </div>`,
     });

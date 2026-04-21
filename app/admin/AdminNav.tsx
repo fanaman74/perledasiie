@@ -21,7 +21,7 @@ export default function AdminNav() {
     <nav className="bg-surface border-b border-border">
       <div className="max-w-6xl mx-auto px-4 flex items-center justify-between h-14">
         <div className="flex items-center gap-6">
-          <span className="font-display text-accent text-lg">Lotus Admin</span>
+          <span className="font-display text-accent text-lg">Perle d'Asie Admin</span>
           {links.map((link) => (
             <Link
               key={link.href}

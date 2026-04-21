@@ -3,7 +3,7 @@ import { createServerClient } from '@/lib/supabase-server';
 import { verifyAdminSession } from '@/lib/admin-auth';
 
 async function checkAuth(req: NextRequest) {
-  const token = req.cookies.get('lotus_admin_token')?.value;
+  const token = req.cookies.get('admin_token')?.value;
   if (!token || !(await verifyAdminSession(token))) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
@@ -17,30 +17,30 @@ export async function GET(req: NextRequest) {
   const supabase = createServerClient();
 
   const { data: items } = await supabase
-    .from('lotus_items')
+    .from('menu_items')
     .select('id, category_id, num, price_restaurant, price_takeaway, active, is_featured, featured_image, sort_order')
     .order('sort_order');
 
   const { data: translations } = await supabase
-    .from('lotus_item_translations')
+    .from('item_translations')
     .select('item_id, locale, name, description');
 
   const { data: categories } = await supabase
-    .from('lotus_categories')
+    .from('categories')
     .select('id, section_id, sort_order')
     .order('sort_order');
 
   const { data: catTrans } = await supabase
-    .from('lotus_category_translations')
+    .from('category_translations')
     .select('category_id, locale, name');
 
   const { data: sections } = await supabase
-    .from('lotus_sections')
+    .from('sections')
     .select('id, sort_order')
     .order('sort_order');
 
   const { data: secTrans } = await supabase
-    .from('lotus_section_translations')
+    .from('section_translations')
     .select('section_id, locale, name');
 
   // Group translations by item
@@ -92,7 +92,7 @@ export async function POST(req: NextRequest) {
     const supabase = createServerClient();
 
     const { data: item, error } = await supabase
-      .from('lotus_items')
+      .from('menu_items')
       .insert({
         category_id,
         num: num || null,
@@ -118,7 +118,7 @@ export async function POST(req: NextRequest) {
       }));
       if (transRows.length > 0) {
         const { error: transError } = await supabase
-          .from('lotus_item_translations')
+          .from('item_translations')
           .insert(transRows);
         if (transError) return NextResponse.json({ error: transError.message }, { status: 500 });
       }

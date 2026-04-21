@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
     }
 
     const { data: otps } = await supabase
-      .from('lotus_otps')
+      .from('otps')
       .select('id, code, expires_at, used')
       .eq('email', email)
       .eq('used', false)
@@ -34,9 +34,9 @@ export async function POST(req: NextRequest) {
     }
 
     // Mark OTP used
-    await supabase.from('lotus_otps').update({ used: true }).eq('id', otp.id);
+    await supabase.from('otps').update({ used: true }).eq('id', otp.id);
 
-    const { data, error } = await supabase.from('lotus_reservations').insert({
+    const { data, error } = await supabase.from('reservations').insert({
       guests, date, time,
       first_name: firstName,
       last_name: lastName || '',
@@ -52,7 +52,7 @@ export async function POST(req: NextRequest) {
       const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
       const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
       if (supabaseUrl && serviceKey) {
-        fetch(`${supabaseUrl}/functions/v1/lotus-reservation-email`, {
+        fetch(`${supabaseUrl}/functions/v1/reservation-email`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

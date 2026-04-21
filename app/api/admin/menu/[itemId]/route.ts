@@ -3,7 +3,7 @@ import { createServerClient } from '@/lib/supabase-server';
 import { verifyAdminSession } from '@/lib/admin-auth';
 
 async function checkAuth(req: NextRequest) {
-  const token = req.cookies.get('lotus_admin_token')?.value;
+  const token = req.cookies.get('admin_token')?.value;
   if (!token || !(await verifyAdminSession(token))) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
@@ -21,7 +21,7 @@ export async function GET(
   const supabase = createServerClient();
 
   const { data: item } = await supabase
-    .from('lotus_items')
+    .from('menu_items')
     .select('*')
     .eq('id', itemId)
     .single();
@@ -29,7 +29,7 @@ export async function GET(
   if (!item) return NextResponse.json({ error: 'Not found' }, { status: 404 });
 
   const { data: translations } = await supabase
-    .from('lotus_item_translations')
+    .from('item_translations')
     .select('locale, name, description')
     .eq('item_id', itemId);
 
@@ -56,7 +56,7 @@ export async function PUT(
     const supabase = createServerClient();
 
     const { error } = await supabase
-      .from('lotus_items')
+      .from('menu_items')
       .update({
         category_id,
         num: num || null,
@@ -75,7 +75,7 @@ export async function PUT(
     if (translations) {
       for (const [locale, t] of Object.entries(translations) as [string, any][]) {
         await supabase
-          .from('lotus_item_translations')
+          .from('item_translations')
           .upsert(
             { item_id: itemId, locale, name: t.name || '', description: t.description || '' },
             { onConflict: 'item_id,locale' }
@@ -101,8 +101,8 @@ export async function DELETE(
     const supabase = createServerClient();
 
     // Delete translations first
-    await supabase.from('lotus_item_translations').delete().eq('item_id', itemId);
-    const { error } = await supabase.from('lotus_items').delete().eq('id', itemId);
+    await supabase.from('item_translations').delete().eq('item_id', itemId);
+    const { error } = await supabase.from('menu_items').delete().eq('id', itemId);
 
     if (error) return NextResponse.json({ error: error.message }, { status: 500 });
     return NextResponse.json({ success: true });

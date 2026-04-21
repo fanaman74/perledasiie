@@ -3,7 +3,7 @@ import { createServerClient } from './supabase-server';
 export async function verifyAdminSession(token: string): Promise<boolean> {
   const supabase = createServerClient();
   const { data } = await supabase
-    .from('lotus_admin_sessions')
+    .from('admin_sessions')
     .select('id, expires_at')
     .eq('token', token)
     .single();
