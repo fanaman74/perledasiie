@@ -39,7 +39,7 @@ export async function POST(req: NextRequest) {
     const firstName = name?.split(' ')[0] || '';
 
     const { error: emailError } = await resend.emails.send({
-      from: `Restaurant Perle d'Asie <${fromEmail}>`,
+      from: `Restaurant Perle d'Asie <noreply@cordis-explorer.eu>`,
       to: [email],
       subject: `${code} — Votre code de vérification Perle d'Asie`,
       html: `
