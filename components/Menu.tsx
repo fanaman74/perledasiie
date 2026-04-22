@@ -36,6 +36,7 @@ type MenuDict = {
   priceRestaurant: string;
   priceTraiteur: string;
   addButton?: string;
+  categoryLabels?: Record<string, string>;
 };
 
 interface MenuProps {
@@ -114,7 +115,7 @@ export default function Menu({ sections, dict }: MenuProps) {
                     : 'text-text-muted hover:text-text'
                 }`}
               >
-                {cat}
+                {dict.categoryLabels?.[cat] ?? cat}
               </button>
             ))}
           </div>

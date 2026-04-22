@@ -24,7 +24,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const [locale, setLocaleState] = useState<Locale>('fr');
 
   useEffect(() => {
-    const saved = localStorage.getItem('lotus-locale') as Locale;
+    const saved = localStorage.getItem('perledasie-locale') as Locale;
     if (saved === 'fr' || saved === 'nl' || saved === 'en') {
       setLocaleState(saved);
     }
@@ -32,7 +32,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
 
   function setLocale(lng: Locale) {
     setLocaleState(lng);
-    localStorage.setItem('lotus-locale', lng);
+    localStorage.setItem('perledasie-locale', lng);
   }
 
   return (

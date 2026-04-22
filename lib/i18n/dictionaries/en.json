@@ -50,6 +50,19 @@
       "viet_nouilles": "Noodles",
       "viet_vegetariens": "Vegetarian"
     },
+    "categoryLabels": {
+      "Potages": "Soups",
+      "Entrées Froides": "Cold Starters",
+      "Entrées Grillades": "Grilled Starters",
+      "Entrées Chaudes": "Hot Starters",
+      "Dim Sum": "Dim Sum",
+      "Volailles": "Poultry",
+      "Viandes": "Meats",
+      "Poissons & Crustacés": "Fish & Seafood",
+      "Riz & Nouilles": "Rice & Noodles",
+      "Grillades Vietnamiennes": "Vietnamese Grilled",
+      "Chop-Shoy": "Chop Suey"
+    },
     "priceRestaurant": "Rest.",
     "priceTraiteur": "Takeaway",
     "dish": {

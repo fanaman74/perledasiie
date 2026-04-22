@@ -50,6 +50,19 @@
       "viet_nouilles": "Nouilles",
       "viet_vegetariens": "Végétariens"
     },
+    "categoryLabels": {
+      "Potages": "Potages",
+      "Entrées Froides": "Entrées Froides",
+      "Entrées Grillades": "Entrées Grillades",
+      "Entrées Chaudes": "Entrées Chaudes",
+      "Dim Sum": "Dim Sum",
+      "Volailles": "Volailles",
+      "Viandes": "Viandes",
+      "Poissons & Crustacés": "Poissons & Crustacés",
+      "Riz & Nouilles": "Riz & Nouilles",
+      "Grillades Vietnamiennes": "Grillades Vietnamiennes",
+      "Chop-Shoy": "Chop-Shoy"
+    },
     "priceRestaurant": "Rest.",
     "priceTraiteur": "Trait.",
     "dish": {

@@ -50,6 +50,19 @@
       "viet_nouilles": "Noedels",
       "viet_vegetariens": "Vegetarisch"
     },
+    "categoryLabels": {
+      "Potages": "Soepen",
+      "Entrées Froides": "Koude Voorgerechten",
+      "Entrées Grillades": "Gegrilde Voorgerechten",
+      "Entrées Chaudes": "Warme Voorgerechten",
+      "Dim Sum": "Dim Sum",
+      "Volailles": "Gevogelte",
+      "Viandes": "Vlees",
+      "Poissons & Crustacés": "Vis & Schaaldieren",
+      "Riz & Nouilles": "Rijst & Noedels",
+      "Grillades Vietnamiennes": "Vietnamees Gegrild",
+      "Chop-Shoy": "Chop Suey"
+    },
     "priceRestaurant": "Rest.",
     "priceTraiteur": "Trait.",
     "dish": {
