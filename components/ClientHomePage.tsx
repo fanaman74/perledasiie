@@ -77,8 +77,30 @@ export default function ClientHomePage() {
         type: m.type as 'set' | 'fondue',
       });
 
-      // Build 2 sections — Menus and Fondues only
+      const mapTableItem = (m: Record<string, unknown>) => ({
+        id: m.id as string,
+        num: m.num as string,
+        name: (m[`name_${locale}`] || m.name_fr) as string,
+        description: (m[`description_${locale}`] || m.description_fr || '') as string,
+        priceRestaurant: m.price_restaurant as number,
+        priceTakeaway: m.price_takeaway as number | null,
+        category: (m[`category_${locale}`] || m.category_fr || '') as string,
+      });
+
+      // Build 4 sections — Entrées, Plats, Menus, Fondues
       const sections: Section[] = [
+        {
+          id: 'entrees',
+          name: (dict.menu.sections as Record<string, string>).entrees ?? 'Entrées',
+          kind: 'table' as const,
+          items: (menuItems ?? []).filter((m: Record<string, unknown>) => m.section === 'entrees').map(mapTableItem),
+        },
+        {
+          id: 'plats',
+          name: (dict.menu.sections as Record<string, string>).plats ?? 'Plats',
+          kind: 'table' as const,
+          items: (menuItems ?? []).filter((m: Record<string, unknown>) => m.section === 'plats').map(mapTableItem),
+        },
         {
           id: 'menus',
           name: (dict.menu.sections as Record<string, string>).menus ?? 'Menus',
