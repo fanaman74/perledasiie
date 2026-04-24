@@ -62,7 +62,7 @@ export default function AllergenesPage() {
         </section>
       </main>
       <Footer dict={{
-        nav: { home: 'Accueil', menus: 'Menus', entrees: 'Entrées', plats: 'Plats', photos: 'Photos', contact: 'Contact', allergenes: 'Allergènes' },
+        nav: { home: 'Accueil', menus: 'Menus', photos: 'Photos', contact: 'Contact', allergenes: 'Allergènes' },
         findUs: { address: "Avenue de l'Exposition 266, 1090 Laeken", phone: '02 478 88 80' },
         footer: { copyright: `© ${new Date().getFullYear()} Perle d'Asie. Tous droits réservés.` },
       }} />
