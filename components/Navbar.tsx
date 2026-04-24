@@ -7,7 +7,7 @@ import type { Locale } from '@/lib/i18n/config';
 
 const navLinks = [
   { key: 'home',       href: '#accueil',    anchor: true  },
-  { key: 'menus',      href: '#menus',      anchor: true  },
+  { key: 'menus',      href: '#menu',       anchor: true  },
   { key: 'photos',     href: '/photos',     anchor: false },
   { key: 'contact',    href: '#contact',    anchor: true  },
   { key: 'allergenes', href: '/allergenes', anchor: false },
