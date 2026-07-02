@@ -126,14 +126,14 @@ export async function POST(req: NextRequest) {
 
       await Promise.all([
         resend.emails.send({
-          from: `Perle d'Asie <${fromEmail}>`,
+          from: fromEmail,
           to: [restaurantEmail],
           subject: `📅 Nouvelle demande — ${typeLabel} (${first_name} ${last_name})`,
           html: restaurantHtml,
           replyTo: email,
         }),
         resend.emails.send({
-          from: `Restaurant Perle d'Asie <${fromEmail}>`,
+          from: fromEmail,
           to: [email],
           subject: `Votre demande d'événement chez Perle d'Asie — confirmation`,
           html: customerHtml,
