@@ -48,7 +48,7 @@ CREATE TABLE IF NOT EXISTS reservations (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   guests INTEGER NOT NULL,
   date DATE NOT NULL,
-  time TEXT NOT NULL,
+  "time" TEXT NOT NULL,
   first_name TEXT NOT NULL,
   last_name TEXT NOT NULL DEFAULT '',
   email TEXT NOT NULL,

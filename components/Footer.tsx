@@ -9,6 +9,8 @@ type FooterDict = {
   findUs: {
     address: string;
     phone: string;
+    websiteLabel: string;
+    websiteUrl: string;
   };
   footer: {
     copyright: string;
@@ -51,6 +53,16 @@ export default function Footer({ dict }: { dict: FooterDict }) {
           <a href={`tel:${dict.findUs.phone.replace(/\s/g, '')}`} className="hover:text-accent transition-colors">
             {dict.findUs.phone}
           </a>
+          <p>
+            <a
+              href={dict.findUs.websiteUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-accent transition-colors"
+            >
+              {dict.findUs.websiteLabel}
+            </a>
+          </p>
         </div>
 
         {/* Social icons */}

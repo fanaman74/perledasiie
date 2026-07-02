@@ -7,6 +7,8 @@ type FindUsDict = {
   title: string;
   address: string;
   phone: string;
+  websiteLabel: string;
+  websiteUrl: string;
   hoursTitle: string;
   hours: {
     monday: HoursEntry;
@@ -40,6 +42,16 @@ export default function FindUs({ dict }: { dict: FindUsDict }) {
             >
               {dict.phone}
             </a>
+            <p className="mt-2">
+              <a
+                href={dict.websiteUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent hover:underline"
+              >
+                {dict.websiteLabel}
+              </a>
+            </p>
 
             <h3 className="font-display text-xl mt-8 mb-4">{dict.hoursTitle}</h3>
             <table className="w-full text-sm mx-auto max-w-md lg:mx-0 lg:max-w-none">
@@ -64,7 +76,7 @@ export default function FindUs({ dict }: { dict: FindUsDict }) {
           <div className="rounded-lg overflow-hidden min-h-[400px]">
             <iframe
               title="Perle d'Asie restaurant location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2517.8!2d4.3310!3d50.8820!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3c3d2d2d2d2d2%3A0x0!2sAvenue+de+l'Exposition+266%2C+1090+Laeken!5e0!3m2!1sfr!2sbe!4v1"
+              src="https://www.google.com/maps?q=Avenue%20de%20l%27Exposition%20266%2C%201090%20Jette&z=15&output=embed"
               width="100%"
               height="100%"
               style={{ border: 0, minHeight: '400px' }}

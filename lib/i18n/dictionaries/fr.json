@@ -9,9 +9,9 @@
     "allergenes": "Allergènes"
   },
   "hero": {
-    "superscript": "Restaurant · Traiteur · Laeken, Bruxelles",
+    "superscript": "Restaurant · Traiteur · Jette, Bruxelles",
     "title": "Spécialités Cuisines Asiatiques depuis 1997",
-    "subtitle": "Découvrez l'authenticité des saveurs asiatiques dans un cadre chaleureux au cœur de Laeken.",
+    "subtitle": "Découvrez l'authenticité des saveurs asiatiques dans un cadre chaleureux au cœur de Jette.",
     "cta": "Voir le menu",
     "scroll": "Scroll"
   },
@@ -463,8 +463,10 @@
   },
   "findUs": {
     "title": "Nous Trouver",
-    "address": "Avenue de l'Exposition 266, 1090 Laeken, Bruxelles",
+    "address": "Avenue de l'Exposition 266, 1090 Jette, Bruxelles",
     "phone": "02 478 88 80",
+    "websiteLabel": "Site officiel: perledasie.be",
+    "websiteUrl": "https://www.perledasie.be/",
     "hoursTitle": "Horaires",
     "hours": {
       "monday": {

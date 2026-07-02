@@ -9,9 +9,9 @@
     "allergenes": "Allergens"
   },
   "hero": {
-    "superscript": "Restaurant · Takeaway · Laeken, Brussels",
+    "superscript": "Restaurant · Takeaway · Jette, Brussels",
     "title": "Asian Cuisine Specialties Since 1997",
-    "subtitle": "Discover the authentic flavours of Asian cuisine in a warm and welcoming setting in the heart of Laeken.",
+    "subtitle": "Discover the authentic flavours of Asian cuisine in a warm and welcoming setting in the heart of Jette.",
     "cta": "View the menu",
     "scroll": "Scroll"
   },
@@ -463,8 +463,10 @@
   },
   "findUs": {
     "title": "Find Us",
-    "address": "Avenue de l'Exposition 266, 1090 Laeken, Brussels",
+    "address": "Avenue de l'Exposition 266, 1090 Jette, Brussels",
     "phone": "02 478 88 80",
+    "websiteLabel": "Official website: perledasie.be",
+    "websiteUrl": "https://www.perledasie.be/",
     "hoursTitle": "Opening Hours",
     "hours": {
       "monday": {

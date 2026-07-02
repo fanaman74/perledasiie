@@ -85,6 +85,10 @@ export default function Menu({ sections, dict }: MenuProps) {
       <div className="max-w-[1200px] mx-auto">
         <h2 className="font-display text-3xl md:text-4xl text-center mb-10">{dict.title}</h2>
 
+        {sections.length === 0 && (
+          <p className="text-text-muted text-center py-12 text-sm">Carte en cours de mise à jour.</p>
+        )}
+
         {/* Section tabs */}
         <div className="flex flex-wrap justify-center gap-3 mb-8">
           {sections.map(section => (

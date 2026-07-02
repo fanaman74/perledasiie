@@ -164,3 +164,52 @@ INSERT INTO menu_items (num, section, category_fr, category_nl, category_en, nam
 ('804', 'plats', 'Chop-Shoy', 'Chop-Shoy', 'Chop-Shoy', 'Chop-Shoy aux légumes (végétarien)', 11.50, 11.50, 804),
 ('805', 'plats', 'Chop-Shoy', 'Chop-Shoy', 'Chop-Shoy', 'Chop-Shoy au poulet', 13.00, 13.00, 805),
 ('806', 'plats', 'Chop-Shoy', 'Chop-Shoy', 'Chop-Shoy', 'Choy-Shoy au porc laqué', 14.00, 14.00, 806);
+
+-- Step 3: Backfill dish descriptions from the official site
+UPDATE menu_items
+SET description_fr = CASE num
+  WHEN '101' THEN 'potage piquant au poulet'
+  WHEN '111' THEN 'potage piquant au scampis'
+  WHEN '219' THEN 'végétarien'
+  WHEN '223' THEN '3 pièces'
+  WHEN '225' THEN '5 pièces'
+  WHEN '226' THEN 'croquettes Vietnamiennes'
+  WHEN '230' THEN '3 pièces'
+  WHEN '237' THEN 'spécial pour 2 pers.'
+  WHEN '304' THEN 'curry jaune au coco'
+  WHEN '308' THEN 'curry jaune au coco'
+  WHEN '309' THEN 'et bambou'
+  WHEN '310' THEN 'aubergines Thaïlandaises'
+  WHEN '313' THEN 'poulet au curry rouge et basilic'
+  WHEN '314' THEN 'et bambou'
+  WHEN '319' THEN 'aux feuilles de basilic'
+  WHEN '402' THEN 'aux feuilles de basilic'
+  WHEN '409' THEN 'porc rôti à l''Indonésienne'
+  WHEN '415' THEN 'servi avec du vermicelle de riz'
+  WHEN '502' THEN 'curry vert et aubergines Thaïlandaises'
+  WHEN '503' THEN 'sauce à part'
+  WHEN '507' THEN 'à la sauce piquante'
+  WHEN '508' THEN 'aux piments et basilic'
+  WHEN '509' THEN 'curry jaune au coco'
+  WHEN '511' THEN 'aux haricots noirs'
+  WHEN '513' THEN 'au beurre et à l''ail'
+  WHEN '515' THEN 'à l''ananas frais, sauce aigre-douce'
+  WHEN '516' THEN 'à l''Orientale'
+  WHEN '517' THEN 'au poivre et sel'
+  WHEN '518' THEN 'aux feuilles de basilic'
+  WHEN '519' THEN 'à l''ananas frais, sauce aigre-doux'
+  WHEN '702' THEN 'brochettes de noix Saint-Jacques'
+  WHEN '704' THEN 'aux feuilles de poivre long'
+  WHEN '705' THEN 'grillés à la citronnelle'
+  WHEN '706' THEN 'aux cinq parfums exotiques'
+  WHEN '707' THEN 'au saté'
+  WHEN '708' THEN 'à la citronnelle'
+  WHEN '709' THEN 'aux 5 variétés (2 pers.)'
+  ELSE description_fr
+END
+WHERE num IN (
+  '101','111','219','223','225','226','230','237',
+  '304','308','309','310','313','314','319','402','409','415',
+  '502','503','507','508','509','511','513','515','516','517','518','519',
+  '702','704','705','706','707','708','709'
+);

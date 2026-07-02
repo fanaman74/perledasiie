@@ -26,8 +26,8 @@ const chango = Chango({
 });
 
 export const metadata: Metadata = {
-  title: "Perle d'Asie — Spécialités Cuisines Asiatiques | Laeken, Bruxelles",
-  description: "Restaurant Perle d'Asie — Spécialités Cuisines Asiatiques depuis 1997. Avenue de l'Exposition 266, 1090 Laeken, Bruxelles.",
+  title: "Perle d'Asie — Spécialités Cuisines Asiatiques | Jette, Bruxelles",
+  description: "Restaurant Perle d'Asie — Spécialités Cuisines Asiatiques depuis 1997. Avenue de l'Exposition 266, 1090 Jette, Bruxelles.",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

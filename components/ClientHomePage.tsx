@@ -1,7 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { useLanguage } from '@/lib/i18n/LanguageContext';
-import { createBrowserClient } from '@/lib/supabase-browser';
 import ScrollReveal from '@/components/ScrollReveal';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
@@ -46,80 +45,62 @@ export default function ClientHomePage() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setLoading(true);
-
-    const supabase = createBrowserClient();
-
     async function loadData() {
-      const [
-        { data: menuItems },
-        { data: setMenusData },
-      ] = await Promise.all([
-        supabase
-          .from('menu_items')
-          .select('*')
-          .eq('active', true)
-          .order('display_order'),
-        supabase
-          .from('set_menus')
-          .select('*')
-          .eq('active', true)
-          .order('display_order'),
-      ]);
+      setLoading(true);
 
-      const mapSetItem = (m: Record<string, unknown>) => ({
-        id: m.id as string,
-        name: (m[`name_${locale}`] || m.name_fr) as string,
-        description: (m[`description_${locale}`] || m.description_fr || '') as string,
-        price: m.price as number,
-        min_people: m.min_people as number,
-        includes: (m[`includes_${locale}`] || m.includes_fr || []) as string[],
-        type: m.type as 'set' | 'fondue',
-      });
+      const response = await fetch(`/api/menu?locale=${locale}`, { cache: 'no-store' });
+      if (!response.ok) {
+        throw new Error('Failed to load menu data');
+      }
 
-      const mapTableItem = (m: Record<string, unknown>) => ({
-        id: m.id as string,
-        num: m.num as string,
-        name: (m[`name_${locale}`] || m.name_fr) as string,
-        description: (m[`description_${locale}`] || m.description_fr || '') as string,
-        priceRestaurant: m.price_restaurant as number,
-        priceTakeaway: m.price_takeaway as number | null,
-        category: (m[`category_${locale}`] || m.category_fr || '') as string,
-      });
+      const data = await response.json();
+      const menuSections: Section[] = (data.sections || []).map((section: Record<string, unknown>) => ({
+        id: section.id as string,
+        name: section.name as string,
+        kind: 'table',
+        items: (((section.categories as Record<string, unknown>[] | undefined) || []).flatMap((category) =>
+          (((category.items as Record<string, unknown>[] | undefined) || []).map((item) => ({
+            id: item.id as string,
+            num: item.num as string,
+            name: item.name as string,
+            description: item.description as string,
+            priceRestaurant: Number(item.priceRestaurant),
+            priceTakeaway: item.priceTakeaway == null ? null : Number(item.priceTakeaway),
+            category: category.name as string,
+          })))
+        )),
+      }));
 
-      // Build 4 sections — Entrées, Plats, Menus, Fondues
-      const sections: Section[] = [
-        {
-          id: 'entrees',
-          name: (dict.menu.sections as Record<string, string>).entrees ?? 'Entrées',
-          kind: 'table' as const,
-          items: (menuItems ?? []).filter((m: Record<string, unknown>) => m.section === 'entrees').map(mapTableItem),
-        },
-        {
-          id: 'plats',
-          name: (dict.menu.sections as Record<string, string>).plats ?? 'Plats',
-          kind: 'table' as const,
-          items: (menuItems ?? []).filter((m: Record<string, unknown>) => m.section === 'plats').map(mapTableItem),
-        },
+      const setMenus: SetMenuItem[] = (data.setMenus || []).map((item: SetMenuItem) => ({
+        ...item,
+        price: Number(item.price),
+        min_people: Number(item.min_people),
+      }));
+
+      setMenuData([
+        ...menuSections,
         {
           id: 'menus',
           name: (dict.menu.sections as Record<string, string>).menus ?? 'Menus',
-          kind: 'cards' as const,
-          setItems: (setMenusData ?? []).filter((m: Record<string, unknown>) => m.type === 'set').map(mapSetItem),
+          kind: 'cards',
+          setItems: setMenus.filter((item) => item.type === 'set'),
         },
         {
           id: 'fondues',
           name: (dict.menu.sections as Record<string, string>).fondues ?? 'Fondues',
-          kind: 'cards' as const,
-          setItems: (setMenusData ?? []).filter((m: Record<string, unknown>) => m.type === 'fondue').map(mapSetItem),
+          kind: 'cards',
+          setItems: setMenus.filter((item) => item.type === 'fondue'),
         },
-      ];
-
-      setMenuData(sections);
-      setLoading(false);
+      ]);
     }
 
-    loadData().catch(() => setLoading(false));
+    loadData()
+      .catch(() => {
+        setMenuData([]);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   }, [locale, dict]);
 
   return (
